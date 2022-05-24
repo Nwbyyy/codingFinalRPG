@@ -9,5 +9,6 @@ Todo List:
 - [x] Make enemy constructor 
 - [x] Make stage constructor (?)
 - [ ] Make methods to create character
-- [ ] Make hud
+- [x] Make enemy display
+- [x] Make hud
 - [ ] Make turn options
