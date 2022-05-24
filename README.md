@@ -4,7 +4,7 @@ I don't have that much time so this could be overly ambitious but I'll try my be
 
 Todo List:
 (idk if i should start on visuals or internals first </3)
-- [ ] Make player constructor
+- [x] Make player constructor
 - [ ] Make item constructors (?)
 - [ ] Make enemy constructor (possibly a few)
 - [ ] Make hud
