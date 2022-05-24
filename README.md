@@ -5,7 +5,9 @@ I don't have that much time so this could be overly ambitious but I'll try my be
 Todo List:
 (idk if i should start on visuals or internals first </3)
 - [x] Make player constructor
-- [ ] Make item constructors (?)
-- [ ] Make enemy constructor (possibly a few)
+- [x] Make item constructors (?)
+- [x] Make enemy constructor 
+- [ ] Make stage constructor (?)
+- [ ] Make methods to create character
 - [ ] Make hud
 - [ ] Make turn options
