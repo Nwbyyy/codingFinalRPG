@@ -7,7 +7,7 @@ Todo List:
 - [x] Make player constructor
 - [x] Make item constructors (?)
 - [x] Make enemy constructor 
-- [ ] Make stage constructor (?)
+- [x] Make stage constructor (?)
 - [ ] Make methods to create character
 - [ ] Make hud
 - [ ] Make turn options
