@@ -2,6 +2,7 @@
     "java.project.sourcePaths": ["src"],
     "java.project.outputPath": "bin",
     "java.project.referencedLibraries": [
-        "lib/**/*.jar"
+        "lib/**/*.jar",
+        "Nwbyyy/codingFinalRPG/codingFinalRPG/lib/commons-lang3-3.12.0.jar"
     ]
 }
