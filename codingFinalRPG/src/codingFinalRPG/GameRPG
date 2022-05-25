@@ -1,0 +1,20 @@
+package codingFinalRPG;
+
+import java.util.Scanner;
+
+public class RPGMethods {
+
+    public static void main(String[] args) {
+
+        Scanner kboard = new Scanner(System.in);
+
+        RPGMethods.DisplayStart();
+        System.out.println("Hey!")
+        String startChoice = kboard.nextLine();
+
+        System.out.print(startChoice);
+
+
+    }
+
+}

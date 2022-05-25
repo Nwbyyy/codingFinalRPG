@@ -64,17 +64,16 @@ public class RPGMethods {
 		System.out.println("-------------------------------------------------------------------------------------------------------------------------");
 		
 		for(int i = 0; i < 3; i++) {
-			System.out.printf("|%119s| %n", "|                                           |                                      ");
+			System.out.printf("|%119s| %n", "|                                       |                                       ");
 		}
 		
-//		System.out.printf("|%119s| %n", "Attack                |                 Inventory                 |                 Check                ");
 		System.out.printf("|%s|%s|%s|%n",
-                StringUtils.center("Name", 22),
-                StringUtils.center("Birth Date", 16),
-                StringUtils.center("Age", 6));
+                StringUtils.center("Attack", 39),
+                StringUtils.center("Inventory", 39),
+                StringUtils.center("Check", 39));
 
 		for(int i = 0; i < 3; i++) {
-			System.out.printf("|%119s| %n", "|                                           |                                      ");
+			System.out.printf("|%119s| %n", "|                                       |                                       ");
 		}
 		
 		System.out.println("-------------------------------------------------------------------------------------------------------------------------");
@@ -101,19 +100,7 @@ public class RPGMethods {
 		
 	}
 
-	public static void main(String[] args) {
-
-		RPGMethods.DisplayOptions();
-
-	}
-
 }
-
-
-
-
-
-
 
 
 /*
