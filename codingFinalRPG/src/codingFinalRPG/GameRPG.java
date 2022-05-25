@@ -2,18 +2,22 @@ package codingFinalRPG;
 
 import java.util.Scanner;
 
-public class RPGMethods {
+public class GameRPG {
 
     public static void main(String[] args) {
 
         Scanner kboard = new Scanner(System.in);
 
         RPGMethods.DisplayStart();
-        System.out.println("Hey!")
         String startChoice = kboard.nextLine();
 
-        System.out.print(startChoice);
+        for(int i = 0; i < 100; i++) {
+        System.out.println("");
+        }
 
+        RPGMethods.StartChoices(startChoice);
+
+        kboard.close();
 
     }
 
