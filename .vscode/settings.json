@@ -1,6 +1,0 @@
-{
-    "java.project.referencedLibraries": [
-        "lib/**/*.jar",
-        "codingFinalRPG/lib/commons-lang3-3.12.0.jar"
-    ]
-}
