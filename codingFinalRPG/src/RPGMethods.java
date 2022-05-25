@@ -1,5 +1,7 @@
 package codingFinalRPG;
 
+import org.apache.commons.lang3.StringUtils;
+
 public class RPGMethods {
 
 	public static void DisplayStart() {
@@ -65,8 +67,12 @@ public class RPGMethods {
 			System.out.printf("|%119s| %n", "|                                           |                                      ");
 		}
 		
-		System.out.printf("|%119s| %n", "Attack                |                 Inventory                 |                 Check                ");
-		
+//		System.out.printf("|%119s| %n", "Attack                |                 Inventory                 |                 Check                ");
+		System.out.printf("|%s|%s|%s|%n",
+                StringUtils.center("Name", 22),
+                StringUtils.center("Birth Date", 16),
+                StringUtils.center("Age", 6));
+
 		for(int i = 0; i < 3; i++) {
 			System.out.printf("|%119s| %n", "|                                           |                                      ");
 		}
@@ -97,8 +103,6 @@ public class RPGMethods {
 
 	public static void main(String[] args) {
 
-		RPGMethods.DisplayStart();
-		RPGMethods.DisplayGoblin();
 		RPGMethods.DisplayOptions();
 
 	}
@@ -142,5 +146,3 @@ Final Boss:
    ||                        ||
    |/                        |/
 */
-
-//This is another test
