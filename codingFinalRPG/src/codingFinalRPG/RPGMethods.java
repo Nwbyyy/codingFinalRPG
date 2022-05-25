@@ -4,6 +4,17 @@ import org.apache.commons.lang3.StringUtils;
 
 public class RPGMethods {
 
+	public static void wait10() {
+
+		try {
+			Thread.sleep(10000);               
+			} 
+		 catch(InterruptedException ex) {
+		Thread.currentThread().interrupt();
+		}
+
+	}
+
 	public static void DisplayStart() {
 
 		System.out.println("-------------------------------------------------------------------------------------------------------------------------");
@@ -48,15 +59,16 @@ public class RPGMethods {
 	public static void StartChoices(String choice) {
 
 		if(choice.equalsIgnoreCase("Start")) {
-
+			RPGMethods.DisplayGuide();
 		}
+
 		else if(choice.equalsIgnoreCase("Credits")) {
-
+			//RPGMethods.DisplayCredits();
 		}
+
 		else {
-			System.out.println();
+			System.out.println("Not a valid choice :/");
 		}
-
 	}
 
 	public static void DisplayOptions() {
@@ -80,6 +92,68 @@ public class RPGMethods {
 		
 	}
 	
+	public static void DisplayGuide() {
+
+		System.out.println("-------------------------------------------------------------------------------------------------------------------------");
+		
+		System.out.printf("|%119s| %n", ("   ___________________________                                              "));   
+		System.out.printf("|%119s| %n", ("  / _________________________ \\                                             "));
+		System.out.printf("|%119s| %n", ("  |/----,                    \\|                                             "));
+		System.out.printf("|%119s| %n", ("  ||NEWS|                    ||                                             "));
+		System.out.printf("|%119s| %n", ("  ||----\'     .-\"\"-.         ||                                             "));
+		System.out.printf("|%119s| %n", ("  ||         / \\    \\        ||                                             "));
+		System.out.printf("|%119s| %n", ("  ||         | /`-._|        ||                                             "));
+		System.out.printf("|%119s| %n", ("  ||         |/ . . |        ||                                             "));
+		System.out.printf("|%119s| %n", ("  ||         (   _\\ )        ||                                             "));
+		System.out.printf("|%119s| %n", ("  ||         |\\  = |         ||                                             "));
+		System.out.printf("|%119s| %n", ("  ||        /\\ \\_._/         ||                                             "));
+		System.out.printf("|%119s| %n", ("  ||       /\\_\\___//\\        ||                                             "));
+		System.out.printf("|%119s| %n", ("  ||     /`  \\  \\|   `\\      ||                                             "));
+		System.out.printf("|%119s| %n", ("  |\\____/_____|__;_____|__CNN/|                                             "));
+		System.out.printf("|%119s| %n", ("  \\___________________________/                                             "));
+		System.out.printf("|%119s| %n", ("      |:::::::::::::::::::|                                                 "));
+		System.out.printf("|%119s| %n", ("      |:::::::::::::::::::|                                                 "));
+		System.out.printf("|%119s| %n", ("      |::():():::::():()::|                                                 "));
+		System.out.printf("|%119s| %n", ("      |:::::::::::::::::::|                                                 "));
+		System.out.printf("|%119s| %n", ("    __|:::::::::::::::::::|__                                               "));
+		System.out.printf("|%119s| %n", ("   /                         \\                                              "));
+		System.out.printf("|%119s| %n", ("  \'===========================\'                                             "));
+
+		System.out.printf("|%119s| %n","");
+
+		System.out.println("-------------------------------------------------------------------------------------------------------------------------");
+
+		System.out.println("-------------------------------------------------------------------------------------------------------------------------");
+		
+		
+		System.out.printf("|%119s| %n", "");
+
+		System.out.printf("|%s|%n",StringUtils.center("Breaking News! Clark Magnet High School has been overrun by creatures of all sorts!", 119));
+		System.out.printf("|%s|%n",StringUtils.center("Luckily, most students were able to evacuate in time, however, there is still a student and a teacher trapped", 119));
+		System.out.printf("|%s|%n",StringUtils.center("within the building! With no resuce teams avaliable, their only option is to fight their way out!", 119));
+
+		System.out.printf("|%119s| %n", "");
+		
+		System.out.println("-------------------------------------------------------------------------------------------------------------------------");
+
+		RPGMethods.wait10();
+
+		System.out.println("-------------------------------------------------------------------------------------------------------------------------");
+		
+		
+		System.out.printf("|%119s| %n", "");
+
+		System.out.printf("|%s|%n",StringUtils.center("To the student and teacher inside: There are items you can use within the classrooms", 119));
+		System.out.printf("|%s|%n",StringUtils.center("to fend off the creatures around you. Make sure to stay safe and kill any monster that challenges you.", 119));
+		System.out.printf("|%s|%n",StringUtils.center("Some items may be useful later, make sure to grab everything while you can. Good luck...", 119));
+		System.out.printf("|%s|%n",StringUtils.center("(As you play, type in your actions as seen in the action boxes.)", 119));
+
+		System.out.printf("|%119s| %n", "");
+		
+		System.out.println("-------------------------------------------------------------------------------------------------------------------------");
+
+	}
+
 	public static void DisplayGoblin() {
 		
 		System.out.println("-------------------------------------------------------------------------------------------------------------------------");
@@ -101,6 +175,54 @@ public class RPGMethods {
 	}
 
 }
+
+/*
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /*
