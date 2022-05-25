@@ -22,9 +22,14 @@ public class RPGMethods {
 		System.out.printf("|%119s| %n", "\\ \\_____\\  \\ \\_____\\  \\ \\_\\\\\"\\_\\  \\ \\_____\\  \\ \\_\\ \\_\\     \\ \\_____\\  \\ \\_\\  \\ \\_\\\\\"\\_\\  \\ \\_____\\  \\/\\_____\\   ");
 		System.out.printf("|%119s| %n", "\\/_____/   \\/_____/   \\/_/ \\/_/   \\/_____/   \\/_/\\/_/      \\/_____/   \\/_/   \\/_/ \\/_/   \\/_____/   \\/_____/   ");
 		
-		for(int i = 0; i < 2; i++) {
-			System.out.printf("|%119s| %n", "");
-		}
+		System.out.printf("|%119s| %n", "");
+
+		System.out.printf("|%119s| %n", ".__         .  .      .                                                  ");
+		System.out.printf("|%119s| %n", "[__)  . *   |\\ |.    ,|_   .                                             ");
+		System.out.printf("|%119s| %n", "[__)\\_| *   | \\| \\/\\/ [_)\\_|                                             ");
+		System.out.printf("|%119s| %n", "._|                  ._|                                             ");
+
+		System.out.printf("|%119s| %n", "");
 
 		System.out.printf("|%119s| %n", "Start                                                         ");
 		System.out.printf("|%119s| %n", "");
@@ -35,6 +40,20 @@ public class RPGMethods {
 		}
 		
 		System.out.println("-------------------------------------------------------------------------------------------------------------------------");
+
+	}
+
+	public static void StartChoices(String choice) {
+
+		if(choice.equalsIgnoreCase("Start")) {
+
+		}
+		else if(choice.equalsIgnoreCase("Credits")) {
+
+		}
+		else {
+			System.out.println();
+		}
 
 	}
 
@@ -79,7 +98,47 @@ public class RPGMethods {
 	public static void main(String[] args) {
 
 		RPGMethods.DisplayStart();
+		RPGMethods.DisplayGoblin();
+		RPGMethods.DisplayOptions();
 
 	}
 
 }
+
+
+
+
+
+
+
+
+/*
+
+Final Boss:
+
+                   _,,,_
+                  /     \
+                  ;      ;
+                 (  '7'  )
+                  ;  ~  ;
+                   \ _ /
+                .---)_(---.
+               /\\  <_>  //\ 
+              ;   > / \ <' _;
+              |   | | | |   |
+         _____|  |\_|_|_/_  |_______
+        /    /  /        /  /      /|
+       /   \/==/------, /==/      //|
+      /    (\( -     /  \\(      //||
+     /       / ~~~~ /           // ||
+    /       '------'           //  ||
+   /__________________________//   ||
+   |-------------------------;;    ||
+   ||   ||     |  ||  |==||  ||    ||
+   ||   ||     |==||==|  ||  ||    ||
+   ||   |/    /  / /  /      ||    |/
+   ||        (__/ (__/       ||
+   ||                        || 
+   ||                        ||
+   |/                        |/
+*/
