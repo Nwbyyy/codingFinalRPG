@@ -16,4 +16,4 @@ Todo List:
 - [x] Make start menu
 - [x] Make starting story
 - [ ] Make credits option
-- [ ] Figure out how the floors will be made
+- [x] Figure out how the floors will be made
