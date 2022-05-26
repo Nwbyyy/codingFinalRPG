@@ -1,6 +1,7 @@
 package codingFinalRPG;
 
 import org.apache.commons.lang3.StringUtils;
+import java.lang.Math.*;
 
 public class RPGMethods {
 
@@ -174,6 +175,17 @@ public class RPGMethods {
 		
 	}
 
+	public static void CreateEnemy(int stageNum) {
+		
+		String[] names = {"Crested Veno","Ebok","Great Zolo","Nomad Enora","Orange Cromo","Alco","Oroo","Pheba","Pink Qolg","Pode","Arra","Black Anate","Black Sevobo","Fanged Hene","Rosetag","Ergosa","Gotorc","Kalo","Mioutor","Seryag","Aiol","Asabo","Boctale","Erthol","Qonc","Ashra","Blue Odora","Levat","Mammoth Pega","Acknag","Aiorabe","Avonada","Black Aiosara","Eveot","Anarbe","Andra","Enovog","Geenod","Giant Daio","Great Orva"};
+		String name = names[((int) (Math.random()*40))];
+		
+		String[] types = {"Goblin"};
+		String type = types[((int) (Math.random()*1))];
+		
+//		Enemy monster = new Enemy(name, )
+		
+	}
 }
 
 /*
@@ -205,4 +217,8 @@ Final Boss:
    ||                        || 
    ||                        ||
    |/                        |/
+*/
+
+/*
+"Crested Veno","Ebok","Great Zolo","Nomad Enora","Orange Cromo","Alco","Oroo","Pheba","Pink Qolg","Pode","Arra","Black Anate","Black Sevobo","Fanged Hene","Rosetag","Ergosa","Gotorc","Kalo","Mioutor","Seryag","Aiol","Asabo","Boctale","Erthol","Qonc","Ashra","Blue Odora","Levat","Mammoth Pega","Acknag","Aiorabe","Avonada","Black Aiosara","Eveot","Anarbe","Andra","Enovog","Geenod","Giant Daio","Great Orva"
 */
