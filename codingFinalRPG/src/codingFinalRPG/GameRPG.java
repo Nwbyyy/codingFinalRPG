@@ -18,6 +18,16 @@ public class GameRPG {
         RPGMethods.StartChoices(startChoice);
 
         kboard.close();
+   
+
+    	
+//    	Enemy monster1 = Enemy.CreateEnemy(0);
+//    	
+//    	System.out.println(monster1.getName() + " the " + monster1.getType());
+//    	System.out.println(monster1.getHealth());
+//    	System.out.println(monster1.getMana());
+//    	System.out.println(monster1.getHeld(0).getName());
+//    	System.out.println(monster1.getDrops(0).getName());
 
     }
 
