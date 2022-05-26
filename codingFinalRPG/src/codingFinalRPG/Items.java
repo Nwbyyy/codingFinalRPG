@@ -37,5 +37,9 @@ public class Items {
 		}
 		
 	}
+	
+	public String getName() {
+		return name;
+	}
 }
 
