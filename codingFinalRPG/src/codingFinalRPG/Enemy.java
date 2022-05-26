@@ -6,8 +6,8 @@ public class Enemy {
 	private String type;
 	private double health;
 	private int mana;
-	private Items[] inHand;
-	private Items[] drops;
+	private Item[] inHand;
+	private Item[] drops;
 	
 	public Enemy() {
 		
@@ -15,12 +15,12 @@ public class Enemy {
 		type = "Goblin";
 		health = 50;
 		mana = 100;
-		inHand = new Items[1];
-		drops = new Items[2];
+		inHand = new Item[1];
+		drops = new Item[2];
 		
 	}
 	
-	public Enemy(String n, String t, double h, int m, Items[] hand, Items[] d) {
+	public Enemy(String n, String t, double h, int m, Item[] hand, Item[] d) {
 		
 		name = n;
 		type = t;
@@ -39,28 +39,28 @@ public class Enemy {
 		String[] types = {"Goblin"};
 		String type = types[((int) (Math.random()*1))];
 		
-		int multi = stageNum * 10;
+		int multi = (stageNum-1) * 10;
 		double health = (int) ((Math.random() * ((100+multi) - (50+multi))) + (50+multi));
 		
 		int mana = (int) ((Math.random() * (100 - 50)) + 50);
 		
-		Items rulerWep = new Items("The Ruler", 10.0, 100, false, false, 0, 0);
-		Items pencilWep = new Items("The Pencil", 7.0, 100, false, false, 0, 0);
-		Items penWep = new Items("The Pen", 12.0, 100, false, false, 0, 0);
+		Item rulerWep = new Item("The Ruler", 10.0, 100, false, false, false, 0, 0, 0);
+		Item pencilWep = new Item("The Pencil", 7.0, 100, false, false, false, 0, 0, 0);
+		Item penWep = new Item("The Pen", 12.0, 100, false, false, false, 0, 0, 0);
 		
-		Items[] handPos = {rulerWep, pencilWep, penWep};
-		Items hand = handPos[((int) (Math.random()*3))];
+		Item[] handPos = {rulerWep, pencilWep, penWep};
+		Item hand = handPos[((int) (Math.random()*3))];
 		
-		Items[] inHand = {hand};
+		Item[] inHand = {hand};
 		
-		Items healthPotion = new Items("Health Potion", 0.0, 1, true, false, 50, 0);
-		Items manaPotion = new Items("Mana Potion", 0.0, 1, false, true, 0, 50);
+		Item healthPotion = new Item("Health Potion", 0.0, 1, true, false, false, 50, 0, 0);
+		Item manaPotion = new Item("Mana Potion", 0.0, 1, false, true, false, 0, 50, 0);
 		
-		Items[] dropPos = {healthPotion, manaPotion};
-		Items drop = dropPos[((int) (Math.random()*2))];
+		Item[] dropPos = {healthPotion, manaPotion};
+		Item drop = dropPos[((int) (Math.random()*2))];
 		
-		Items[] drops;
-		drops = new Items[2];
+		Item[] drops;
+		drops = new Item[2];
 		drops[0] = drop;
 		
 		if(((int) (Math.random()*3)) == 0) {
@@ -89,11 +89,11 @@ public class Enemy {
 		return mana;
 	}
 	
-	public Items getHeld(int which) {
+	public Item getHeld(int which) {
 		return inHand[which];
 	}
 	
-	public Items getDrops(int which) {
+	public Item getDrops(int which) {
 		return drops[which];
 	}
 	

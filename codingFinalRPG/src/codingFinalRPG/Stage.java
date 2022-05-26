@@ -3,22 +3,27 @@ package codingFinalRPG;
 public class Stage {
 
 	private int stageNumber;
-	private int enemiesSpawned;
-	private String[] endLoot;
+	private int roomsNumber;
+	private Room[] rooms;
+
 	
 	public Stage() {
 		
-		stageNumber = 1;
-		enemiesSpawned = 1;
-		endLoot = new String[1];
+		stageNumber = 0;
+		roomsNumber = 5;
+		rooms = new Room[roomsNumber];
 		
 	}
 	
-	public Stage(int stageNum, int spawned, String[] loot) {
+	public Stage(int stageNum, int roomAmt, Room[] rms) {
 		
 		stageNumber = stageNum;
-		enemiesSpawned = spawned;
-		endLoot = loot;
+		roomsNumber = roomAmt;
+		rooms = rms;
 		
+	}
+
+	public Room[] getRooms() {
+		return rooms;
 	}
 }

@@ -4,7 +4,7 @@ public class Character {
 
 	private double health;
 	private int mana; //idk if im adding this
-	private int invSpace;
+	private int invSpace; //idk if im adding this
 	private String[] inventory;
 	private int experience;
 	private int level;

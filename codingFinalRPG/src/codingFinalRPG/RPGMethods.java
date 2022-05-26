@@ -4,10 +4,27 @@ import org.apache.commons.lang3.StringUtils;
 
 public class RPGMethods {
 
+	public static void spaces100() {
+		for(int i = 0; i < 100; i++) {
+	        System.out.println("");
+	        }
+	}
+
 	public static void wait10() {
 
 		try {
 			Thread.sleep(10000);               
+			} 
+		 catch(InterruptedException ex) {
+		Thread.currentThread().interrupt();
+		}
+
+	}
+
+	public static void wait5() {
+
+		try {
+			Thread.sleep(5000);               
 			} 
 		 catch(InterruptedException ex) {
 		Thread.currentThread().interrupt();
@@ -165,12 +182,14 @@ public class RPGMethods {
 
 		System.out.printf("|%s|%n",StringUtils.center("Your fate is in your hands, chose to enter classrooms or keep moving.", 119));
 		System.out.printf("|%s|%n",StringUtils.center("If you enter a classroom, you will be faced with a monster. Defeat it, and its loot is yours.", 119));
-		System.out.printf("|%s|%n",StringUtils.center("Everyone may not be as they seem, be as careful as you can...", 119));
 		System.out.printf("|%s|%n",StringUtils.center("On your way out of your classroom into the halls, you grab a ruler to protect yourself.", 119));
+		System.out.printf("|%s|%n",StringUtils.center("Once in the hallway, you come across your first classroom... You hear sounds coming from behind the door...", 119));
 
 		System.out.printf("|%119s| %n", "");
 		
 		System.out.println("-------------------------------------------------------------------------------------------------------------------------");
+
+		RPGMethods.wait5();
 
 	}
 
@@ -199,7 +218,7 @@ public class RPGMethods {
 		System.out.println("-------------------------------------------------------------------------------------------------------------------------");
 		
 		for(int i = 0; i < 3; i++) {
-			System.out.printf("|%119s| %n", "");
+			System.out.printf("|%119s| %n", StringUtils.center("|", 119));
 		}
 		
 		System.out.printf("|%s|%s|%n",
@@ -207,13 +226,38 @@ public class RPGMethods {
                 StringUtils.center("Move On", 59));
 
 		for(int i = 0; i < 3; i++) {
-			System.out.printf("|%119s| %n", "");
+			System.out.printf("|%119s| %n", StringUtils.center("|", 119));
 		}
 		
 		System.out.println("-------------------------------------------------------------------------------------------------------------------------");
 		
 	}
+
+	public static void DisplayEnterRoom() {
+
+		for(int i = 0; i < 100; i++) {
+	        System.out.println("");
+	    }
+
+		System.out.println("-------------------------------------------------------------------------------------------------------------------------");
+		
+		for(int i = 0; i < 3; i++) {
+			System.out.printf("|%119s| %n", "");
+		}
+		
+		System.out.printf("|%s|%n",
+                StringUtils.center("You enter the classroom. Everything seems to be fine until you see the source of the noises you were hearing before.", 119),
+                StringUtils.center("A monster moves to attack you!", 119));
+
+		for(int i = 0; i < 3; i++) {
+			System.out.printf("|%119s| %n", "");
+		}
+		
+		System.out.println("-------------------------------------------------------------------------------------------------------------------------");
+	}
+
 }
+
 
 /*
 
