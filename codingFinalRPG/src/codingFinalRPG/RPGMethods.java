@@ -180,7 +180,7 @@ public class RPGMethods {
 		
 		System.out.printf("|%119s| %n", "");
 
-		System.out.printf("|%s|%n",StringUtils.center("Your fate is in your hands, chose to enter classrooms or keep moving.", 119));
+		System.out.printf("|%s|%n",StringUtils.center("Your fate is in your hands, choose to enter classrooms or keep moving.", 119));
 		System.out.printf("|%s|%n",StringUtils.center("If you enter a classroom, you will be faced with a monster. Defeat it, and its loot is yours.", 119));
 		System.out.printf("|%s|%n",StringUtils.center("On your way out of your classroom into the halls, you grab a ruler to protect yourself.", 119));
 		System.out.printf("|%s|%n",StringUtils.center("Once in the hallway, you come across your first classroom... You hear sounds coming from behind the door...", 119));
