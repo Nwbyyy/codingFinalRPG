@@ -51,7 +51,7 @@ public class GameRPG {
 
         else if(RPGMethods.DisplayOptions().equalsIgnoreCase("move on")) {
 
-            
+
 
         }
 
@@ -82,6 +82,7 @@ public class GameRPG {
         // System.out.println(stage1.getRooms()[0].getEnemies()[0].getName());
         // System.out.println(stage1.getRooms()[0].getRoomLoot().getName());
 
+        kboard.close();
     }
 
 }

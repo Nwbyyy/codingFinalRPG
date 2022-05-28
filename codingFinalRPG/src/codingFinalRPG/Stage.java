@@ -6,15 +6,16 @@ public class Stage {
 	private int roomsNumber;
 	private Room[] rooms;
 
-	
+	//Default stage constructor
 	public Stage() {
 		
-		stageNumber = 0;
+		stageNumber = 1000;
 		roomsNumber = 5;
 		rooms = new Room[roomsNumber];
 		
 	}
 	
+	//Custom stage constructor
 	public Stage(int stageNum, int roomAmt, Room[] rms) {
 		
 		stageNumber = stageNum;
@@ -23,6 +24,7 @@ public class Stage {
 		
 	}
 
+	//Retruns the list of rooms
 	public Room[] getRooms() {
 		return rooms;
 	}

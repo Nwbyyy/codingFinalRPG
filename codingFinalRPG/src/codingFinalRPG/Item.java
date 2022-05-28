@@ -2,6 +2,7 @@ package codingFinalRPG;
 
 public class Item {
 
+	//Vars :)
 	private String name;
 	private double damage;
 	private int durability;
@@ -12,6 +13,7 @@ public class Item {
 	private boolean costMana;
 	private int manaCost;
 	
+	//Default item constructor
 	public Item() {
 		
 		name = "Flower";
@@ -23,6 +25,7 @@ public class Item {
 		
 	}
 	
+	//Custom item constructor
 	public Item(String n, double dmg, int dura, boolean doHR, boolean doMR, boolean cM, int HR, int MR, int mC) {
 		
 		name = n;
@@ -46,6 +49,7 @@ public class Item {
 		
 	}
 	
+	//Returns name of item (used to test atm)
 	public String getName() {
 		return name;
 	}

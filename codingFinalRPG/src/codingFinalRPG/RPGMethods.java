@@ -5,12 +5,14 @@ import java.util.Scanner;
 
 public class RPGMethods {
 
+	//Prints 100 spaces lol
 	public static void spaces100() {
 		for(int i = 0; i < 100; i++) {
 	        System.out.println("");
 	        }
 	}
 
+	//Waits 10 seconds
 	public static void wait10() {
 
 		try {
@@ -22,6 +24,7 @@ public class RPGMethods {
 
 	}
 
+	//Waits 5 seconds
 	public static void wait5() {
 
 		try {
@@ -33,6 +36,7 @@ public class RPGMethods {
 
 	}
 
+	//Displays the title card
 	public static void DisplayStart() {
 
 		System.out.println("-------------------------------------------------------------------------------------------------------------------------");
@@ -74,6 +78,7 @@ public class RPGMethods {
 
 	}
 
+	//Continues the games depending on choice
 	public static void StartChoices(String choice) {
 
 		if(choice.equalsIgnoreCase("Start")) {
@@ -89,6 +94,7 @@ public class RPGMethods {
 		}
 	}
 
+	//Displays combat choices
 	public static String DisplayActions() {
 		
 		Scanner kboard = new Scanner(System.in);
@@ -117,6 +123,7 @@ public class RPGMethods {
 		
 	}
 	
+	//Displays the full guide sequence
 	public static void DisplayGuide() {
 
 		System.out.println("-------------------------------------------------------------------------------------------------------------------------");
@@ -201,6 +208,7 @@ public class RPGMethods {
 
 	}
 
+	//Displays the goblin image
 	public static void DisplayGoblin() {
 		
 		System.out.println("-------------------------------------------------------------------------------------------------------------------------");
@@ -221,6 +229,7 @@ public class RPGMethods {
 		
 	}
 
+	//Displays the options for rooms
 	public static String DisplayOptions() {
 		
 		Scanner kboard = new Scanner(System.in);
@@ -247,6 +256,7 @@ public class RPGMethods {
 		
 	}
 
+	//Displays the message when you enter a room
 	public static void DisplayEnterRoom() {
 
 		for(int i = 0; i < 100; i++) {

@@ -6,6 +6,7 @@ public class Room {
     private Item roomLoot;
     private int roomNumber;
 
+    //Default room constructor
     public Room() {
 
         enemies = new Enemy[1];
@@ -14,6 +15,7 @@ public class Room {
 
     }
 
+    //Custom room constructor
     public Room(Enemy[] enemy, Item loot, int num) {
     
         enemies = enemy;
@@ -22,6 +24,7 @@ public class Room {
 
     }
 
+    //Generates random custom rooms to be put into the stage arrays
     public static Room[] GenerateRooms(int stageNum, int roomsTotal) {
         
         Room[] rooms;
@@ -30,6 +33,7 @@ public class Room {
         Enemy[] enemies;
         enemies = new Enemy[1];
 
+        //Weapons and drops ('Item' object) for monsters in room
         Item rulerWep = new Item("The Ruler", 20.0, 100, false, false, false, 0, 0, 0);
 		Item pencilWep = new Item("The Pencil", 14.0, 100, false, false, false, 0, 0, 0);
 		Item penWep = new Item("The Pen", 24.0, 100, false, false, false, 0, 0, 0);
@@ -38,14 +42,16 @@ public class Room {
 
         Item[] lootTable = {rulerWep, pencilWep, penWep, healthPotion, manaPotion};
         
-
+        //Creates multiple rooms to put into a list
         for(int i = 0; i < roomsTotal; i++) {
-
+            
+            //Uses method to create all the enemies in the room
             enemies[0] = Enemy.CreateEnemy(stageNum);
 
-            
+            //Randomly drops one of five items after defeating enemy
             Item endRoomLoot = lootTable[((int) (Math.random()*5))];
 
+            //Randomly generates room number depending on your floor
             int roomNum = (int) ((Math.random() * ((1999+((stageNum-1)*1000)) - (1000+((stageNum-1)*1000)))) + (1000+((stageNum-1)*1000)));
 
             Room room = new Room(enemies, endRoomLoot, roomNum);
@@ -57,14 +63,17 @@ public class Room {
 
     }
 
+    //Returns the enemy list (eventually needed)
     public Enemy[] getEnemies() {
         return enemies;
     }
 
+    //Returns the loot in the room (testing)
     public Item getRoomLoot() {
         return roomLoot;
     }
 
+    //Returns the room number (testing)
     public int getRoomNumber() {
         return roomNumber;
     }

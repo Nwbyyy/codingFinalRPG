@@ -10,6 +10,7 @@ public class Character {
 	private int level;
 	private int stage;
 	
+	//Default character constructor
 	public Character() {
 		
 		health = 100;
@@ -22,6 +23,7 @@ public class Character {
 		
 	}
 	
+	//Custom character constructor
 	public Character(double h, int m, int invS, String[] inv, int exp, int lvl, int s) {
 		
 		health = h;
@@ -33,4 +35,6 @@ public class Character {
 		stage = s;
 		
 	}
+
+	//Lots of work to be done LOL
 }
