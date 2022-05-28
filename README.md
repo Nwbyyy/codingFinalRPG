@@ -18,3 +18,4 @@ Todo List:
 - [x] Make starting story
 - [ ] Make credits option
 - [x] Figure out how the floors will be made
+- [ ] Add comments to everything (oops)
