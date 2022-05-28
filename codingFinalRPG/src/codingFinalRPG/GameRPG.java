@@ -7,12 +7,12 @@ public class GameRPG {
     public static void main(String[] args) {
 
         Scanner kboard = new Scanner(System.in);
-        boolean check = true;
         int stageNum = 1;
         int roomsTotal = 5;
+        String startChoice = "";
 
         RPGMethods.DisplayStart();
-        String startChoice = kboard.nextLine();
+        startChoice = kboard.nextLine();
 
         for(int i = 0; i < 100; i++) {
         System.out.println("");
@@ -21,25 +21,37 @@ public class GameRPG {
         RPGMethods.StartChoices(startChoice);
 
         Stage stage1 = new Stage(1, 5, Room.GenerateRooms(stageNum, roomsTotal));
-
-        RPGMethods.DisplayOptions();
-        String optionChoice = kboard.nextLine();
-
-        
             
-        if(optionChoice.equalsIgnoreCase("enter room")) {
+        if(RPGMethods.DisplayOptions().equalsIgnoreCase("enter room")) {
 
             RPGMethods.DisplayEnterRoom();
             RPGMethods.wait10();
             RPGMethods.spaces100();
             RPGMethods.DisplayGoblin();
-            RPGMethods.DisplayActions();
+            
+            if(RPGMethods.DisplayActions().equalsIgnoreCase("attack")) {
+                
+                //Combat.attack(enemy?);
 
+            }
+
+            else if(RPGMethods.DisplayActions().equalsIgnoreCase("inventory")) {
+
+                //Character.invetory(?);
+
+            }
+
+            else if(RPGMethods.DisplayActions().equalsIgnoreCase("check")) {
+
+                //RPGMethods.check(enemy);
+
+            }
+            
         }
 
-        else if(optionChoice.equalsIgnoreCase("move on")) {
+        else if(RPGMethods.DisplayOptions().equalsIgnoreCase("move on")) {
 
-
+            
 
         }
 

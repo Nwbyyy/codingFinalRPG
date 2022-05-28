@@ -1,6 +1,7 @@
 package codingFinalRPG;
 
 import org.apache.commons.lang3.StringUtils;
+import java.util.Scanner;
 
 public class RPGMethods {
 
@@ -88,8 +89,10 @@ public class RPGMethods {
 		}
 	}
 
-	public static void DisplayActions() {
+	public static String DisplayActions() {
 		
+		Scanner kboard = new Scanner(System.in);
+
 		System.out.println("-------------------------------------------------------------------------------------------------------------------------");
 		
 		for(int i = 0; i < 3; i++) {
@@ -106,6 +109,11 @@ public class RPGMethods {
 		}
 		
 		System.out.println("-------------------------------------------------------------------------------------------------------------------------");
+
+		String actionChoice = kboard.nextLine();
+
+		return actionChoice;
+
 		
 	}
 	
@@ -213,8 +221,10 @@ public class RPGMethods {
 		
 	}
 
-	public static void DisplayOptions() {
+	public static String DisplayOptions() {
 		
+		Scanner kboard = new Scanner(System.in);
+
 		System.out.println("-------------------------------------------------------------------------------------------------------------------------");
 		
 		for(int i = 0; i < 3; i++) {
@@ -230,6 +240,10 @@ public class RPGMethods {
 		}
 		
 		System.out.println("-------------------------------------------------------------------------------------------------------------------------");
+
+		String optionChoice = kboard.nextLine();
+
+		return optionChoice;
 		
 	}
 
