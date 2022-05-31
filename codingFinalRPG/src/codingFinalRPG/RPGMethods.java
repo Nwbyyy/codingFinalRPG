@@ -327,7 +327,7 @@ public class RPGMethods {
 			System.out.printf("|%119s| %n", "");
 		}
 		
-		System.out.printf("|%s|%n", StringUtils.center("The goblin strikes you with " + goblin.getHeld(0).getName() + ", dealing " + goblin.getHeld(0).getDamage() + " to the goblin.", 119));
+		System.out.printf("|%s|%n", StringUtils.center("The goblin strikes you with " + goblin.getHeld(0).getName() + ", dealing " + goblin.getHeld(0).getDamage(), 119));
 		System.out.printf("|%s|%n", StringUtils.center("You have " + player.getHealth() + " HP remaining.", 119));
 		
 		for(int i = 0; i < 3; i++) {
@@ -351,7 +351,7 @@ public class RPGMethods {
 				System.out.printf("|%s|%n", StringUtils.center(i.getName(), 119));
 			}
 			else {
-				break;
+				continue;
 			}
 		}
 		
@@ -360,6 +360,7 @@ public class RPGMethods {
 		}
 		
 		System.out.println("-------------------------------------------------------------------------------------------------------------------------");
+
 	}
 	
 	//Displays the message when you check your inv
@@ -390,6 +391,105 @@ public class RPGMethods {
 		}
 		
 		System.out.printf("|%s|%n", StringUtils.center("The goblin has been defeated! Continue your adventure.", 119));
+		
+		for(int i = 0; i < 3; i++) {
+			System.out.printf("|%119s| %n", "");
+		}
+		
+		System.out.println("-------------------------------------------------------------------------------------------------------------------------");
+	}
+
+	//Displays the options for invetory
+	public static String DisplayInvOptions() {
+		
+		Scanner kboard = new Scanner(System.in);
+
+		System.out.println("-------------------------------------------------------------------------------------------------------------------------");
+		
+		for(int i = 0; i < 3; i++) {
+			System.out.printf("|%119s| %n", StringUtils.center("|", 119));
+		}
+		
+		System.out.printf("|%s|%s|%n",
+				StringUtils.center("Use Item (Slot Number Input)", 59),
+				StringUtils.center("Exit", 59));
+
+		for(int i = 0; i < 3; i++) {
+			System.out.printf("|%119s| %n", StringUtils.center("|", 119));
+		}
+		
+		System.out.println("-------------------------------------------------------------------------------------------------------------------------");
+
+		String optionChoice = kboard.nextLine();
+
+		return optionChoice;
+		
+	}
+
+	//Displays the message when you heal
+	public static void DisplayHealed(Character player) {
+
+		System.out.println("-------------------------------------------------------------------------------------------------------------------------");
+		
+		for(int i = 0; i < 3; i++) {
+			System.out.printf("|%119s| %n", "");
+		}
+		
+		System.out.printf("|%s|%n", StringUtils.center("You healed! Your new health is " + player.getHealth(), 119));
+		
+		for(int i = 0; i < 3; i++) {
+			System.out.printf("|%119s| %n", "");
+		}
+		
+		System.out.println("-------------------------------------------------------------------------------------------------------------------------");
+	}
+
+	//Displays the message when you mana restore
+	public static void DisplayRestoredMana(Character player) {
+
+		System.out.println("-------------------------------------------------------------------------------------------------------------------------");
+		
+		for(int i = 0; i < 3; i++) {
+			System.out.printf("|%119s| %n", "");
+		}
+		
+		System.out.printf("|%s|%n", StringUtils.center("You restored your mana! Your new mana is " + player.getMana(), 119));
+		
+		for(int i = 0; i < 3; i++) {
+			System.out.printf("|%119s| %n", "");
+		}
+		
+		System.out.println("-------------------------------------------------------------------------------------------------------------------------");
+	}
+
+	//Displays the message when you move on
+	public static void DisplayMoveOn() {
+
+		System.out.println("-------------------------------------------------------------------------------------------------------------------------");
+		
+		for(int i = 0; i < 3; i++) {
+			System.out.printf("|%119s| %n", "");
+		}
+		
+		System.out.printf("|%s|%n", StringUtils.center("You moved pass that room, who knows what was in there...", 119));
+		
+		for(int i = 0; i < 3; i++) {
+			System.out.printf("|%119s| %n", "");
+		}
+		
+		System.out.println("-------------------------------------------------------------------------------------------------------------------------");
+	}
+
+	//Displays the message when you move on
+	public static void DisplayEnemyMissed(Character player) {
+
+		System.out.println("-------------------------------------------------------------------------------------------------------------------------");
+		
+		for(int i = 0; i < 3; i++) {
+			System.out.printf("|%119s| %n", "");
+		}
+		
+		System.out.printf("|%s|%n", StringUtils.center("The enemy miss its swing! You still have " + player.getHealth() + " HP.", 119));
 		
 		for(int i = 0; i < 3; i++) {
 			System.out.printf("|%119s| %n", "");

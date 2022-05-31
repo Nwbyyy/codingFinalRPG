@@ -46,8 +46,21 @@ public class Character {
 	public void setHealth(double hlth) {
 		health = hlth;
 	}
+
+	public void setMana(int mna) {
+		mana = mna;
+	}
 	
 	public void takeDamage(double dmg) {
 		health -= dmg;
 	}
+
+	public void heal(double amt) {
+		health += amt;
+	}
+
+	public void restoreMana(double amt) {
+		mana += amt;
+	}
+	
 }

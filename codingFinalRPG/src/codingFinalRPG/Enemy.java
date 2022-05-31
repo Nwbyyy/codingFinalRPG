@@ -68,18 +68,20 @@ public class Enemy {
 		Item manaPotion = new Item("Mana Potion", 0.0, 1, false, true, false, 0, 50, 0);
 		
 		//Randomly choses one of the two to drop
-		Item[] dropPos = {healthPotion, manaPotion};
-		Item drop = dropPos[((int) (Math.random()*2))];
+		// Item[] dropPos = {healthPotion, manaPotion};
+		// Item drop = dropPos[((int) (Math.random()*2))];
+		Item[] dropPos = {healthPotion};
+		Item drop = dropPos[0];
 		
 		//Assigns potion to drop list
 		Item[] drops;
-		drops = new Item[2];
+		drops = new Item[1];
 		drops[0] = drop;
 		
-		//Makes a 33% chance of dropping weapon (now that i think about it, its not worth theyre weaker than normal weapons but idk)
-		if(((int) (Math.random()*3)) == 0) {
-			drops[1] = hand;
-		}
+		// //Makes a 33% chance of dropping weapon (now that i think about it, its not worth theyre weaker than normal weapons but idk)
+		// if(((int) (Math.random()*3)) == 0) {
+		// 	drops[1] = hand;
+		// }
 	
 		//Creates the actual enemy
 		Enemy monster = new Enemy(name, type, health, mana, inHand, drops);

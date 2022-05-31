@@ -2,21 +2,21 @@ package codingFinalRPG;
 
 public class Room {
 
-    private Enemy[] enemies;
+    private Enemy enemies;
     private Item roomLoot;
     private int roomNumber;
 
     //Default room constructor
     public Room() {
 
-        enemies = new Enemy[1];
+        enemies = null;
         roomLoot = null;
         roomNumber = 1000;
 
     }
 
     //Custom room constructor
-    public Room(Enemy[] enemy, Item loot, int num) {
+    public Room(Enemy enemy, Item loot, int num) {
     
         enemies = enemy;
         roomLoot = loot;
@@ -29,9 +29,6 @@ public class Room {
         
         Room[] rooms;
         rooms = new Room[roomsTotal];
-
-        Enemy[] enemies;
-        enemies = new Enemy[1];
 
         //Weapons and drops ('Item' object) for monsters in room
         Item rulerWep = new Item("The Ruler", 20.0, 100, false, false, false, 0, 0, 0);
@@ -46,7 +43,7 @@ public class Room {
         for(int i = 0; i < roomsTotal; i++) {
             
             //Uses method to create all the enemies in the room
-            enemies[0] = Enemy.CreateEnemy(stageNum);
+            Enemy enemy = Enemy.CreateEnemy(stageNum);
 
             //Randomly drops one of five items after defeating enemy
             Item endRoomLoot = lootTable[((int) (Math.random()*5))];
@@ -54,7 +51,7 @@ public class Room {
             //Randomly generates room number depending on your floor
             int roomNum = (int) ((Math.random() * ((1999+((stageNum-1)*1000)) - (1000+((stageNum-1)*1000)))) + (1000+((stageNum-1)*1000)));
 
-            Room room = new Room(enemies, endRoomLoot, roomNum);
+            Room room = new Room(enemy, endRoomLoot, roomNum);
             rooms[i] = room;
 
         }
@@ -64,7 +61,7 @@ public class Room {
     }
 
     //Returns the enemy list (eventually needed)
-    public Enemy[] getEnemies() {
+    public Enemy getEnemies() {
         return enemies;
     }
 
