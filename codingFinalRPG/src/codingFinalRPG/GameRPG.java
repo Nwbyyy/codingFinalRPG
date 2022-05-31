@@ -13,10 +13,6 @@ public class GameRPG {
         
         //Weapons and items
         Item rulerWep = new Item("The Ruler", 16.0, 100, false, false, false, 0, 0, 0);
-//		Item pencilWep = new Item("The Pencil", 14.0, 100, false, false, false, 0, 0, 0);
-//		Item penWep = new Item("The Pen", 20.0, 100, false, false, false, 0, 0, 0);
-//      Item healthPotion = new Item("Health Potion", 0.0, 1, true, false, false, 50, 0, 0);
-//		Item manaPotion = new Item("Mana Potion", 0.0, 1, false, true, false, 0, 50, 0);
         
         Item[] inv;
         inv = new Item[5];
@@ -44,25 +40,31 @@ public class GameRPG {
 	            RPGMethods.DisplayEnterRoom();
 	            RPGMethods.wait5();
 	            RPGMethods.spaces100();
+                System.out.println("Room: " + stage1.getRooms()[i].getRoomNumber());
 	            RPGMethods.DisplayGoblin();
 	            
-	            while(player.getHealth() > 0 && stage1.getRooms()[i].getEnemies()[0].getHealth() > 0) {
+	            while(player.getHealth() > 0 && stage1.getRooms()[i].getEnemies().getHealth() > 0) {
 	            
 		            if(RPGMethods.DisplayActions().equalsIgnoreCase("attack")) {
 		                
-		            	stage1.getRooms()[i].getEnemies()[0].takeDamage(player.getInv()[0].getDamage());
-		                
-		                RPGMethods.DisplayYourAttack(player, stage1.getRooms()[i].getEnemies()[0]);
-		                
-		                stage1.getRooms()[i].getEnemies()[0].enemyAttack(player);
-		                
-		                RPGMethods.DisplayEnemyAttack(player, stage1.getRooms()[i].getEnemies()[0]);
+                        Combat.AttackSeq(stage1, i, player);
 		
 		            }
 		
 		            else if(RPGMethods.DisplayActions().equalsIgnoreCase("Inventory")) {
-		
+                        
+                        RPGMethods.spaces100();
 		                RPGMethods.DisplayInventory(player);
+                        
+                        if(RPGMethods.DisplayInvOptions().equalsIgnoreCase("exit")) {
+                            continue;
+                        }
+
+                        else {
+                            
+                            Item.useItem(player);
+
+                        }
 		
 		            }
 		
@@ -82,9 +84,16 @@ public class GameRPG {
 	            	
 	            }
 	            
-	            else if(stage1.getRooms()[i].getEnemies()[0].getHealth() < 0) {
+	            else if(stage1.getRooms()[i].getEnemies().getHealth() < 0) {
 	            	
 	            	RPGMethods.DisplayEnemyDefeated();
+                    for(int k = 0; k < player.getInvSpace(); k++) {
+
+                        if(player.getInv()[k] == null) {
+                            player.getInv()[k] = stage1.getRooms()[i].getEnemies().getDrops(0);
+                            break;
+                        }
+                    }
 	            	RPGMethods.wait5();
 	            }
 	            
@@ -92,39 +101,23 @@ public class GameRPG {
 	
 	        else if(RPGMethods.DisplayOptions().equalsIgnoreCase("move on")) {
 	
-	
+                RPGMethods.spaces100();
+                RPGMethods.DisplayMoveOn();
+                RPGMethods.wait5();
 	
 	        }
 	
 	        else {
 	
-	
+             System.out.println("That's not an option...");
 	
 	        }
         }
 
-        
-
-
-    	
-        // Enemy monster1 = Enemy.CreateEnemy(0);
-        
-        // System.out.println(monster1.getName() + " the " + monster1.getType());
-        // System.out.println(monster1.getHealth());
-        // System.out.println(monster1.getMana());
-        // System.out.println(monster1.getHeld(0).getName());
-        // System.out.println(monster1.getDrops(0).getName());
-
-
-        // int stageNum = 1;
-        // int roomsTotal = 5;
-        // Stage stage1 = new Stage(1, 5, Room.GenerateRooms(stageNum, roomsTotal));
-
-        // System.out.println(stage1.getRooms()[0].getRoomNumber());
-        // System.out.println(stage1.getRooms()[0].getEnemies()[0].getName());
-        // System.out.println(stage1.getRooms()[0].getRoomLoot().getName());
+        //final boss here?
 
         kboard.close();
+
     }
 
 }
