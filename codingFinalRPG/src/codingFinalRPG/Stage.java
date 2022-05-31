@@ -28,4 +28,5 @@ public class Stage {
 	public Room[] getRooms() {
 		return rooms;
 	}
+	
 }
