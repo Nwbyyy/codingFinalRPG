@@ -115,11 +115,19 @@ public class Enemy {
 	}
 	
 	//Used to damage the enemy and take their mana when used
-	public void setHealth(double dmg) {
+	public void setHealth(double hlth) {
+		health = hlth;
+	}
+	
+	public void setMana(int mna) {
+		mana = mna;
+	}
+	
+	public void takeDamage(double dmg) {
 		health -= dmg;
 	}
 	
-	public void setMana(double used) {
-		health -= used;
+	public void enemyAttack(Character player) {
+		player.takeDamage(this.getHeld(0).getDamage());
 	}
 }
