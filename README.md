@@ -13,7 +13,7 @@ Todo List:
 - [x] Make stage constructor (?)
 - [x] Make enemy display
 - [x] Make hud
-- [ ] Make turn options
+- [x] Make turn options
 - [x] Make start menu
 - [x] Make starting story
 - [ ] Make credits option
