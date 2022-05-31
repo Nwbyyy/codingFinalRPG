@@ -5,36 +5,49 @@ public class Character {
 	private double health;
 	private int mana; //idk if im adding this
 	private int invSpace; //idk if im adding this
-	private String[] inventory;
-	private int experience;
-	private int level;
-	private int stage;
+	private Item[] inventory;
 	
 	//Default character constructor
 	public Character() {
 		
 		health = 100;
 		mana = 100;
-		invSpace = 10;
-		inventory = new String[invSpace];
-		experience = 0;
-		level = 1;
-		stage = 0;
+		invSpace = 5;
+		inventory = new Item[invSpace];
 		
 	}
 	
 	//Custom character constructor
-	public Character(double h, int m, int invS, String[] inv, int exp, int lvl, int s) {
+	public Character(double h, int m, int invS, Item[] inv) {
 		
 		health = h;
 		mana = m;
 		invSpace = invS;
 		inventory = inv;
-		experience = exp;
-		level = lvl;
-		stage = s;
 		
 	}
-
-	//Lots of work to be done LOL
+	
+	public double getHealth() {
+		return health;
+	}
+	
+	public double getMana() {
+		return mana;
+	}
+	
+	public double getInvSpace() {
+		return invSpace;
+	}
+	
+	public Item[] getInv() {
+		return inventory;
+	}
+	
+	public void setHealth(double hlth) {
+		health = hlth;
+	}
+	
+	public void takeDamage(double dmg) {
+		health -= dmg;
+	}
 }
