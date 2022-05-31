@@ -198,7 +198,6 @@ public class RPGMethods {
 		System.out.printf("|%s|%n",StringUtils.center("Your fate is in your hands, choose to enter classrooms or keep moving.", 119));
 		System.out.printf("|%s|%n",StringUtils.center("If you enter a classroom, you will be faced with a monster. Defeat it, and its loot is yours.", 119));
 		System.out.printf("|%s|%n",StringUtils.center("On your way out of your classroom into the halls, you grab a ruler to protect yourself.", 119));
-		System.out.printf("|%s|%n",StringUtils.center("Once in the hallway, you come across your first classroom... You hear sounds coming from behind the door...", 119));
 
 		System.out.printf("|%119s| %n", "");
 		
@@ -259,10 +258,8 @@ public class RPGMethods {
 	//Displays the message when you enter a room
 	public static void DisplayEnterRoom() {
 
-		for(int i = 0; i < 100; i++) {
-	        System.out.println("");
-	    }
-
+		RPGMethods.spaces100();
+		
 		System.out.println("-------------------------------------------------------------------------------------------------------------------------");
 		
 		for(int i = 0; i < 3; i++) {
@@ -273,6 +270,127 @@ public class RPGMethods {
                 StringUtils.center("You enter the classroom. Everything seems to be fine until you see the source of the noises you were hearing before.", 119),
                 StringUtils.center("A monster moves to attack you!", 119));
 
+		for(int i = 0; i < 3; i++) {
+			System.out.printf("|%119s| %n", "");
+		}
+		
+		System.out.println("-------------------------------------------------------------------------------------------------------------------------");
+	}
+	
+	//Displays the message when youre in the hallway outside
+	public static void DisplayFromHallway() {
+
+		RPGMethods.spaces100();
+
+		System.out.println("-------------------------------------------------------------------------------------------------------------------------");
+		
+		for(int i = 0; i < 3; i++) {
+			System.out.printf("|%119s| %n", "");
+		}
+		
+		System.out.printf("|%s|%n", StringUtils.center("You come across a classroom, it sounds like there is something inside.", 119));
+
+		for(int i = 0; i < 3; i++) {
+			System.out.printf("|%119s| %n", "");
+		}
+		
+		System.out.println("-------------------------------------------------------------------------------------------------------------------------");
+	}
+	
+	//Displays the message when you attack
+	public static void DisplayYourAttack(Character player, Enemy goblin) {
+
+		RPGMethods.spaces100();
+
+		System.out.println("-------------------------------------------------------------------------------------------------------------------------");
+		
+		for(int i = 0; i < 3; i++) {
+			System.out.printf("|%119s| %n", "");
+		}
+		
+		System.out.printf("|%s|%n", StringUtils.center("You strike the enemy with " + player.getInv()[0].getName() + ", dealing " + player.getInv()[0].getDamage() + " to the goblin.", 119));
+		System.out.printf("|%s|%n", StringUtils.center("The goblin has " + goblin.getHealth() + " HP remaining.", 119));
+
+		for(int i = 0; i < 3; i++) {
+			System.out.printf("|%119s| %n", "");
+		}
+		
+		System.out.println("-------------------------------------------------------------------------------------------------------------------------");
+	}
+	
+	//Displays the message when the enemy attacks
+	public static void DisplayEnemyAttack(Character player, Enemy goblin) {
+
+		System.out.println("-------------------------------------------------------------------------------------------------------------------------");
+		
+		for(int i = 0; i < 3; i++) {
+			System.out.printf("|%119s| %n", "");
+		}
+		
+		System.out.printf("|%s|%n", StringUtils.center("The goblin strikes you with " + goblin.getHeld(0).getName() + ", dealing " + goblin.getHeld(0).getDamage() + " to the goblin.", 119));
+		System.out.printf("|%s|%n", StringUtils.center("You have " + player.getHealth() + " HP remaining.", 119));
+		
+		for(int i = 0; i < 3; i++) {
+			System.out.printf("|%119s| %n", "");
+		}
+		
+		System.out.println("-------------------------------------------------------------------------------------------------------------------------");
+	}
+	
+	//Displays the message when you check your inv
+	public static void DisplayInventory(Character player) {
+
+		System.out.println("-------------------------------------------------------------------------------------------------------------------------");
+		
+		for(int i = 0; i < 3; i++) {
+			System.out.printf("|%119s| %n", "");
+		}
+		
+		for(Item i : player.getInv()) {
+			if(i != null) {
+				System.out.printf("|%s|%n", StringUtils.center(i.getName(), 119));
+			}
+			else {
+				break;
+			}
+		}
+		
+		for(int i = 0; i < 3; i++) {
+			System.out.printf("|%119s| %n", "");
+		}
+		
+		System.out.println("-------------------------------------------------------------------------------------------------------------------------");
+	}
+	
+	//Displays the message when you check your inv
+	public static void DisplayYouDied() {
+
+		System.out.println("-------------------------------------------------------------------------------------------------------------------------");
+		
+		for(int i = 0; i < 3; i++) {
+			System.out.printf("|%119s| %n", "");
+		}
+		
+		System.out.printf("|%s|%n", StringUtils.center("You died.", 119));
+		
+		for(int i = 0; i < 3; i++) {
+			System.out.printf("|%119s| %n", "");
+		}
+		
+		System.out.println("-------------------------------------------------------------------------------------------------------------------------");
+	}
+	
+	//Displays the message when you check your inv
+	public static void DisplayEnemyDefeated() {
+
+		System.out.println("-------------------------------------------------------------------------------------------------------------------------");
+		
+		for(int i = 0; i < 3; i++) {
+			System.out.printf("|%119s| %n", "");
+		}
+		
+		System.out.printf("|%s|%n", StringUtils.center("The goblin has been defeated! Continue your adventure.", 119));
+		
 		for(int i = 0; i < 3; i++) {
 			System.out.printf("|%119s| %n", "");
 		}
