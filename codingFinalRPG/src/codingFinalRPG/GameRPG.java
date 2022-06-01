@@ -1,6 +1,8 @@
 package codingFinalRPG;
 
+import java.util.*;
 import java.util.Scanner;
+
 
 public class GameRPG {
 
@@ -9,14 +11,15 @@ public class GameRPG {
         Scanner kboard = new Scanner(System.in);
         int stageNum = 1;
         int roomsTotal = 5;
+        int slot = 1;
         String startChoice = "";
+        String invChoice = "";
         
         //Weapons and items
         Item rulerWep = new Item("The Ruler", 16.0, 100, false, false, false, 0, 0, 0);
         
-        Item[] inv;
-        inv = new Item[5];
-        inv[0] = rulerWep;
+        ArrayList<Item> inv = new ArrayList<Item>();
+        inv.add(rulerWep);
         		
         		
         Character player = new Character(100.0, 100, 5, inv);
@@ -40,35 +43,44 @@ public class GameRPG {
 	            RPGMethods.DisplayEnterRoom();
 	            RPGMethods.wait5();
 	            RPGMethods.spaces100();
-                System.out.println("Room: " + stage1.getRooms()[i].getRoomNumber());
+                System.out.println("Room: " + stage1.getRooms().get(i).getRoomNumber());
 	            RPGMethods.DisplayGoblin();
 	            
-	            while(player.getHealth() > 0 && stage1.getRooms()[i].getEnemies().getHealth() > 0) {
+	            while(player.getHealth() > 0 && stage1.getRooms().get(i).getEnemies().getHealth() > 0) {
 	            
-		            if(RPGMethods.DisplayActions().equalsIgnoreCase("attack")) {
+	            	String actionChoice = RPGMethods.DisplayActions();
+	            	
+		            if(actionChoice.equalsIgnoreCase("attack")) {
 		                
                         Combat.AttackSeq(stage1, i, player);
 		
 		            }
-		
-		            else if(RPGMethods.DisplayActions().equalsIgnoreCase("Inventory")) {
+		            
+		            else if(actionChoice.equalsIgnoreCase("Inventory")) {
                         
                         RPGMethods.spaces100();
 		                RPGMethods.DisplayInventory(player);
-                        
-                        if(RPGMethods.DisplayInvOptions().equalsIgnoreCase("exit")) {
+		                RPGMethods.DisplayInvOptions();
+		                
+		                invChoice = kboard.nextLine();
+		                
+                        if(invChoice.equalsIgnoreCase("exit")) {
+                        	
                             continue;
+                            
                         }
 
                         else {
                             
-                            Item.useItem(player);
-
+                        	Integer.parseInt(invChoice);
+                        	
+                            Item.useItem(player, slot);
+                            
                         }
 		
 		            }
 		
-		            else if(RPGMethods.DisplayActions().equalsIgnoreCase("check")) {
+		            else if(actionChoice.equalsIgnoreCase("check")) {
 		
 		                //RPGMethods.check(enemy);
 		
@@ -76,7 +88,7 @@ public class GameRPG {
 
 	            }
 	            
-	            if(player.getHealth() < 0) {
+	            if(player.getHealth() <= 0) {
 	            	
 	            	RPGMethods.DisplayYouDied();
 	            	RPGMethods.wait10();
@@ -84,13 +96,13 @@ public class GameRPG {
 	            	
 	            }
 	            
-	            else if(stage1.getRooms()[i].getEnemies().getHealth() < 0) {
+	            else if(stage1.getRooms().get(i).getEnemies().getHealth() <= 0) {
 	            	
 	            	RPGMethods.DisplayEnemyDefeated();
                     for(int k = 0; k < player.getInvSpace(); k++) {
 
-                        if(player.getInv()[k] == null) {
-                            player.getInv()[k] = stage1.getRooms()[i].getEnemies().getDrops(0);
+                        if(player.getInv().get(k) == null) {
+                            player.getInv().add(stage1.getRooms().get(i).getEnemies().getDrops(0));
                             break;
                         }
                     }
