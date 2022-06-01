@@ -1,5 +1,7 @@
 package codingFinalRPG;
 
+import java.util.*;
+
 public class Item {
 
 	//Vars :)
@@ -73,52 +75,63 @@ public class Item {
 		return manaRestore;
 	}
 
-	public static void useItem(Character player) {
-		int slot = Integer.parseInt(RPGMethods.DisplayInvOptions()) - 1;
+	public static void useItem(Character player, int slot) {
 		System.out.println(slot);
-		if(player.getInv()[slot].getName().equalsIgnoreCase("Health Potion")) {
+		if(player.getInv().get(slot).getName().equalsIgnoreCase("Health Potion")) {
 
 			if(player.getHealth() == 100) {
 
 				RPGMethods.spaces100();
 				RPGMethods.DisplayHealed(player);
+				player.getInv().remove(slot);
+				
 			}
 
 			else if(player.getHealth() + healthPotion.getHealthRestore() > 100) {
 
 				RPGMethods.spaces100();
-				RPGMethods.DisplayHealed(player);
 				player.setHealth(100);
+				RPGMethods.DisplayHealed(player);
+				player.getInv().remove(slot);
 
 			}
 
 			else if(player.getHealth() + healthPotion.getHealthRestore() < 100) {
 
 				RPGMethods.spaces100();
-				RPGMethods.DisplayHealed(player);
 				player.heal(healthPotion.getHealthRestore());
+				RPGMethods.DisplayHealed(player);
+				player.getInv().remove(slot);
 
 			}
 		}
 
-		else if(player.getInv()[slot].getName().equalsIgnoreCase("Mana Potion")) {
+		else if(player.getInv().get(slot).getName().equalsIgnoreCase("Mana Potion")) {
 
 			if(player.getMana() == 100) {
 
 				RPGMethods.spaces100();
 				RPGMethods.DisplayRestoredMana(player);
+				player.getInv().remove(slot);
+				
 			}
+			
 			else if(player.getMana()+healthPotion.getManaRestore() > 100) {
 
 				RPGMethods.spaces100();
-				RPGMethods.DisplayRestoredMana(player);
 				player.setMana(100);
+				RPGMethods.DisplayRestoredMana(player);
+				player.getInv().remove(slot);
+
 			}
+			
 			else if(player.getMana()+healthPotion.getManaRestore() < 100) {
 
 				RPGMethods.spaces100();
-				RPGMethods.DisplayRestoredMana(player);
 				player.restoreMana(healthPotion.getManaRestore());
+				RPGMethods.DisplayRestoredMana(player);
+				player.getInv().remove(slot);
+
 			}
 		}
 
