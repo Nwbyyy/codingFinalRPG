@@ -1,14 +1,16 @@
 package codingFinalRPG;
 
+import java.util.*;
+
 public class Combat {
 	
 	public static void AttackSeq(Stage stage, int i, Character player) {
 
 		if(((int) (Math.random()*3)) == 0) {
 
-			stage.getRooms()[i].getEnemies().takeDamage(player.getInv()[0].getDamage());
+			stage.getRooms().get(i).getEnemies().takeDamage(player.getInv().get(0).getDamage());
 		                
-			RPGMethods.DisplayYourAttack(player, stage.getRooms()[i].getEnemies());
+			RPGMethods.DisplayYourAttack(player, stage.getRooms().get(i).getEnemies());
 							
 			RPGMethods.DisplayEnemyMissed(player);
 
@@ -16,13 +18,13 @@ public class Combat {
 
 		else {
 
-			stage.getRooms()[i].getEnemies().takeDamage(player.getInv()[0].getDamage());
+			stage.getRooms().get(i).getEnemies().takeDamage(player.getInv().get(0).getDamage());
 		                
-			RPGMethods.DisplayYourAttack(player, stage.getRooms()[i].getEnemies());
+			RPGMethods.DisplayYourAttack(player, stage.getRooms().get(i).getEnemies());
 							
-			stage.getRooms()[i].getEnemies().enemyAttack(player);
+			stage.getRooms().get(i).getEnemies().enemyAttack(player);
 							
-			RPGMethods.DisplayEnemyAttack(player, stage.getRooms()[i].getEnemies());
+			RPGMethods.DisplayEnemyAttack(player, stage.getRooms().get(i).getEnemies());
 
 		}
 		
