@@ -1,7 +1,7 @@
 package codingFinalRPG;
 
 import org.apache.commons.lang3.StringUtils;
-import java.util.Scanner;
+import java.util.*;
 
 public class RPGMethods {
 
@@ -115,7 +115,6 @@ public class RPGMethods {
 		}
 		
 		System.out.println("-------------------------------------------------------------------------------------------------------------------------");
-
 		String actionChoice = kboard.nextLine();
 
 		return actionChoice;
@@ -308,7 +307,7 @@ public class RPGMethods {
 			System.out.printf("|%119s| %n", "");
 		}
 		
-		System.out.printf("|%s|%n", StringUtils.center("You strike the enemy with " + player.getInv()[0].getName() + ", dealing " + player.getInv()[0].getDamage() + " to the goblin.", 119));
+		System.out.printf("|%s|%n", StringUtils.center("You strike the enemy with " + player.getInv().get(0).getName() + ", dealing " + player.getInv().get(0).getDamage() + " to the goblin.", 119));
 		System.out.printf("|%s|%n", StringUtils.center("The goblin has " + goblin.getHealth() + " HP remaining.", 119));
 
 		for(int i = 0; i < 3; i++) {
@@ -327,7 +326,7 @@ public class RPGMethods {
 			System.out.printf("|%119s| %n", "");
 		}
 		
-		System.out.printf("|%s|%n", StringUtils.center("The goblin strikes you with " + goblin.getHeld(0).getName() + ", dealing " + goblin.getHeld(0).getDamage(), 119));
+		System.out.printf("|%s|%n", StringUtils.center("The goblin strikes you with " + goblin.getHeld().getName() + ", dealing " + goblin.getHeld().getDamage(), 119));
 		System.out.printf("|%s|%n", StringUtils.center("You have " + player.getHealth() + " HP remaining.", 119));
 		
 		for(int i = 0; i < 3; i++) {
@@ -400,9 +399,7 @@ public class RPGMethods {
 	}
 
 	//Displays the options for invetory
-	public static String DisplayInvOptions() {
-		
-		Scanner kboard = new Scanner(System.in);
+	public static void DisplayInvOptions() {
 
 		System.out.println("-------------------------------------------------------------------------------------------------------------------------");
 		
@@ -419,10 +416,6 @@ public class RPGMethods {
 		}
 		
 		System.out.println("-------------------------------------------------------------------------------------------------------------------------");
-
-		String optionChoice = kboard.nextLine();
-
-		return optionChoice;
 		
 	}
 
@@ -489,7 +482,7 @@ public class RPGMethods {
 			System.out.printf("|%119s| %n", "");
 		}
 		
-		System.out.printf("|%s|%n", StringUtils.center("The enemy miss its swing! You still have " + player.getHealth() + " HP.", 119));
+		System.out.printf("|%s|%n", StringUtils.center("The enemy misses its swing! You still have " + player.getHealth() + " HP.", 119));
 		
 		for(int i = 0; i < 3; i++) {
 			System.out.printf("|%119s| %n", "");
