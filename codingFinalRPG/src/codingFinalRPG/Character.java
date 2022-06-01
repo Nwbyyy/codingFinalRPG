@@ -1,11 +1,13 @@
 package codingFinalRPG;
 
+import java.util.*;
+
 public class Character {
 
 	private double health;
 	private int mana; //idk if im adding this
 	private int invSpace; //idk if im adding this
-	private Item[] inventory;
+	private ArrayList<Item> inventory;
 	
 	//Default character constructor
 	public Character() {
@@ -13,12 +15,12 @@ public class Character {
 		health = 100;
 		mana = 100;
 		invSpace = 5;
-		inventory = new Item[invSpace];
+		inventory = new ArrayList<Item>(invSpace);
 		
 	}
 	
 	//Custom character constructor
-	public Character(double h, int m, int invS, Item[] inv) {
+	public Character(double h, int m, int invS, ArrayList<Item> inv) {
 		
 		health = h;
 		mana = m;
@@ -39,7 +41,7 @@ public class Character {
 		return invSpace;
 	}
 	
-	public Item[] getInv() {
+	public ArrayList<Item> getInv() {
 		return inventory;
 	}
 	
