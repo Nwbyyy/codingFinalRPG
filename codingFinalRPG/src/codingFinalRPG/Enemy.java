@@ -1,12 +1,14 @@
 package codingFinalRPG;
 
+import java.util.*;
+
 public class Enemy {
 
 	private String name;
 	private String type;
 	private double health;
 	private int mana;
-	private Item[] inHand;
+	private Item inHand;
 	private Item[] drops;
 	
 	//Default enemy constructor
@@ -16,13 +18,13 @@ public class Enemy {
 		type = "Goblin";
 		health = 50;
 		mana = 100;
-		inHand = new Item[1];
+		inHand = null;
 		drops = new Item[2];
 		
 	}
 
 	//Custom energy constructor
-	public Enemy(String n, String t, double h, int m, Item[] hand, Item[] d) {
+	public Enemy(String n, String t, double h, int m, Item hand, Item[] d) {
 		
 		name = n;
 		type = t;
@@ -61,7 +63,7 @@ public class Enemy {
 		Item hand = handPos[((int) (Math.random()*3))];
 		
 		//Assigns it to the enemy
-		Item[] inHand = {hand};
+		Item inHand = hand;
 		
 		//Creates drops (potions) for the enemy ('Item' objects)
 		Item healthPotion = new Item("Health Potion", 0.0, 1, true, false, false, 50, 0, 0);
@@ -108,8 +110,8 @@ public class Enemy {
 		return mana;
 	}
 	
-	public Item getHeld(int which) {
-		return inHand[which];
+	public Item getHeld() {
+		return inHand;
 	}
 	
 	public Item getDrops(int which) {
@@ -130,6 +132,6 @@ public class Enemy {
 	}
 	
 	public void enemyAttack(Character player) {
-		player.takeDamage(this.getHeld(0).getDamage());
+		player.takeDamage(this.getHeld().getDamage());
 	}
 }
