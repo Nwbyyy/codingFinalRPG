@@ -1,5 +1,7 @@
 package codingFinalRPG;
 
+import java.util.*;
+
 public class Room {
 
     private Enemy enemies;
@@ -25,10 +27,9 @@ public class Room {
     }
 
     //Generates random custom rooms to be put into the stage arrays
-    public static Room[] GenerateRooms(int stageNum, int roomsTotal) {
+    public static ArrayList<Room> GenerateRooms(int stageNum, int roomsTotal) {
         
-        Room[] rooms;
-        rooms = new Room[roomsTotal];
+        ArrayList<Room> rooms = new ArrayList<Room>();
 
         //Weapons and drops ('Item' object) for monsters in room
         Item rulerWep = new Item("The Ruler", 20.0, 100, false, false, false, 0, 0, 0);
@@ -52,7 +53,7 @@ public class Room {
             int roomNum = (int) ((Math.random() * ((1999+((stageNum-1)*1000)) - (1000+((stageNum-1)*1000)))) + (1000+((stageNum-1)*1000)));
 
             Room room = new Room(enemy, endRoomLoot, roomNum);
-            rooms[i] = room;
+            rooms.add(room);
 
         }
 
