@@ -1,22 +1,24 @@
 package codingFinalRPG;
 
+import java.util.*;
+
 public class Stage {
 
 	private int stageNumber;
 	private int roomsNumber;
-	private Room[] rooms;
+	private ArrayList<Room> rooms;
 
 	//Default stage constructor
 	public Stage() {
 		
 		stageNumber = 1000;
 		roomsNumber = 5;
-		rooms = new Room[roomsNumber];
+		rooms = new ArrayList<Room>(roomsNumber);
 		
 	}
 	
 	//Custom stage constructor
-	public Stage(int stageNum, int roomAmt, Room[] rms) {
+	public Stage(int stageNum, int roomAmt, ArrayList<Room> rms) {
 		
 		stageNumber = stageNum;
 		roomsNumber = roomAmt;
@@ -25,7 +27,7 @@ public class Stage {
 	}
 
 	//Retruns the list of rooms
-	public Room[] getRooms() {
+	public ArrayList<Room> getRooms() {
 		return rooms;
 	}
 	
