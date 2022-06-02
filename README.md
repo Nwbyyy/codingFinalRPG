@@ -5,6 +5,12 @@ I don't have that much time so this could be overly ambitious but I'll try my be
 
 NOTICE: HEAVILY WORK IN PROGRESS
 
+TALLY:
+- Files: 8
+- Constructors: 10 
+- Methods: 54
+- Longest File: 646 lines
+
 Todo List:
 (idk if i should start on visuals or internals first </3)
 - [x] Make player constructor
