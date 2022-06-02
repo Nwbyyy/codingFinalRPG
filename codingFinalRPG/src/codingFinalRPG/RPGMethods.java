@@ -35,6 +35,18 @@ public class RPGMethods {
 		}
 
 	}
+	
+	//Waits 1 second
+	public static void wait1() {
+		
+		try {
+			Thread.sleep(1000);               
+			} 
+		 catch(InterruptedException ex) {
+		Thread.currentThread().interrupt();
+		}
+		
+	}
 
 	//Displays the title card
 	public static void DisplayStart() {
@@ -530,6 +542,150 @@ public class RPGMethods {
 		System.out.println("-------------------------------------------------------------------------------------------------------------------------");
 	}
 
+	//Displays the boss graphic
+	public static void DisplayFinalBoss() {
+
+		System.out.println("-------------------------------------------------------------------------------------------------------------------------");
+		
+		System.out.printf("|%119s| %n", "                   _,,,_                                                         ");
+		System.out.printf("|%119s| %n", "                  /     \\                                                        ");
+		System.out.printf("|%119s| %n", "                  ; \\ /  ;                                                       ");
+		System.out.printf("|%119s| %n", "                 (  '7'  )                                                       ");
+		System.out.printf("|%119s| %n", "                  ;  ~  ;                                                        ");
+		System.out.printf("|%119s| %n", "                   \\ _ /                                                         ");
+		System.out.printf("|%119s| %n", "                .---)_(---.                                                      ");
+		System.out.printf("|%119s| %n", "               /\\\\  <_>  //\\                                                     ");
+		System.out.printf("|%119s| %n", "              ;   > / \\ <' _;                                                    ");
+		System.out.printf("|%119s| %n", "              |   | | | |   |                                                    ");
+		System.out.printf("|%119s| %n", "         _____|  |\\_|_|_/_  |_______                                             ");
+		System.out.printf("|%119s| %n", "        /    /  /        /  /      /|                                            ");
+		System.out.printf("|%119s| %n", "       /   \\/==/------, /==/      //|                                            ");
+		System.out.printf("|%119s| %n", "      /    (\\( -     /  \\\\(      //||                                            ");
+		System.out.printf("|%119s| %n", "     /       / ~~~~ /           // ||                                            ");
+		System.out.printf("|%119s| %n", "    /       '------'           //  ||                                            ");
+		System.out.printf("|%119s| %n", "   /__________________________//   ||                                            ");
+		System.out.printf("|%119s| %n", "   |-------------------------;;    ||                                            ");
+		System.out.printf("|%119s| %n", "   ||   ||     |  ||  |==||  ||    ||                                            ");
+		System.out.printf("|%119s| %n", "   ||   ||     |==||==|  ||  ||    ||                                            ");
+		System.out.printf("|%119s| %n", "   ||   |/    /  / /  /      ||    |/                                            ");
+		System.out.printf("|%119s| %n", "   ||        (__/ (__/       ||                                                  ");
+		System.out.printf("|%119s| %n", "   ||                        ||                                                  ");
+		System.out.printf("|%119s| %n", "   ||                        ||                                                  ");
+		System.out.printf("|%119s| %n", "   |/                        |/                                                  ");
+		
+		System.out.printf("|%119s| %n", "");
+		
+		System.out.println("-------------------------------------------------------------------------------------------------------------------------");
+		
+		System.out.println("-------------------------------------------------------------------------------------------------------------------------");
+		
+		System.out.printf("|%119s| %n", "");
+
+		System.out.printf("|%s|%n",StringUtils.center("Mr. K is ENRAGED that you are trying to seperate him from the breakfast burittos...", 119));
+		System.out.printf("|%s|%n",StringUtils.center("You must act fast and take them from him!", 119));
+		System.out.printf("|%s|%n",StringUtils.center("When you see he's weak, move in and grab the burrito from his desk!!!", 119));
+
+		System.out.printf("|%119s| %n", "");
+		
+		System.out.println("-------------------------------------------------------------------------------------------------------------------------");
+
+	}
+	
+	//Displays the boss diaglog
+	public static void DisplayBossDialog() {
+		
+		System.out.println("-------------------------------------------------------------------------------------------------------------------------");
+				
+		System.out.printf("|%119s| %n", "");
+
+		System.out.printf("|%s|%n",StringUtils.center("I'm surpirsed to see you here, I was hoping that there wouldn't be any students left after they evacuated.", 119));
+		System.out.printf("|%s|%n",StringUtils.center("It wasn't easy getting monsters to come from another world to invade the school, but I did what neede to be done.", 119));
+		System.out.printf("|%s|%n",StringUtils.center("How else was I suppose to execute my master plan...", 119));
+		System.out.printf("|%s|%n",StringUtils.center("The school's breakfast burrito supply was suppose to be all mine!!!", 119));
+
+		System.out.printf("|%119s| %n", "");
+		
+		System.out.println("-------------------------------------------------------------------------------------------------------------------------");
+
+		RPGMethods.wait10();
+		
+		
+		System.out.println("-------------------------------------------------------------------------------------------------------------------------");
+		
+		System.out.printf("|%119s| %n", "");
+
+		System.out.printf("|%s|%n",StringUtils.center("But now that you know the truth, I'm not going to let you leave this room...", 119));
+		System.out.printf("|%s|%n",StringUtils.center("I wish you luck and don't forget......", 119));
+
+		System.out.printf("|%119s| %n", "");
+		
+		System.out.println("-------------------------------------------------------------------------------------------------------------------------");
+
+		RPGMethods.wait5();
+		RPGMethods.spaces100();
+		
+		
+		System.out.println("-------------------------------------------------------------------------------------------------------------------------");
+		
+		System.out.printf("|%119s| %n", "");
+
+		System.out.printf("|%s|%n",StringUtils.center("DROP.", 119));
+
+		System.out.printf("|%119s| %n", "");
+		
+		System.out.println("-------------------------------------------------------------------------------------------------------------------------");
+
+		RPGMethods.wait1();
+		RPGMethods.spaces100();
+		
+		
+		System.out.println("-------------------------------------------------------------------------------------------------------------------------");
+		
+		System.out.printf("|%119s| %n", "");
+
+		System.out.printf("|%s|%n",StringUtils.center("THAT.", 119));
+
+		System.out.printf("|%119s| %n", "");
+		
+		System.out.println("-------------------------------------------------------------------------------------------------------------------------");
+
+		RPGMethods.wait1();
+		RPGMethods.spaces100();	
+		
+		
+		System.out.println("-------------------------------------------------------------------------------------------------------------------------");
+		
+		System.out.printf("|%119s| %n", "");
+
+		System.out.printf("|%s|%n",StringUtils.center("GRADE.", 119));
+
+		System.out.printf("|%119s| %n", "");
+		
+		System.out.println("-------------------------------------------------------------------------------------------------------------------------");
+
+		RPGMethods.wait1();
+		RPGMethods.spaces100();	
+		
+	}
+		
+	//Displays the message when you beat the floor
+		public static void DisplayBossWeak() {
+
+			System.out.println("-------------------------------------------------------------------------------------------------------------------------");
+			
+			for(int i = 0; i < 3; i++) {
+				System.out.printf("|%119s| %n", "");
+			}
+			
+			System.out.printf("|%s|%n", StringUtils.center("Mr. K missed his stike and became disoriented! This could be your chance!", 119));
+			
+			for(int i = 0; i < 3; i++) {
+				System.out.printf("|%119s| %n", "");
+			}
+			
+			System.out.println("-------------------------------------------------------------------------------------------------------------------------");
+		}
+	
 	//Runs the entire game (I cant belive this fits in a single method)
 	public static void RunGameStage(Stage stage1, Character player) {
 
@@ -579,6 +735,7 @@ public class RPGMethods {
                             
                             if(invChoice.equalsIgnoreCase("exit")) {
                                 
+                            	RPGMethods.spaces100();
                                 continue;
                                 
                             }
@@ -644,35 +801,3 @@ public class RPGMethods {
 	}
 
 }
-
-
-/*
-
-Final Boss:
-
-                   _,,,_
-                  /     \
-                  ;      ;
-                 (  '7'  )
-                  ;  ~  ;
-                   \ _ /
-                .---)_(---.
-               /\\  <_>  //\ 
-              ;   > / \ <' _;
-              |   | | | |   |
-         _____|  |\_|_|_/_  |_______
-        /    /  /        /  /      /|
-       /   \/==/------, /==/      //|
-      /    (\( -     /  \\(      //||
-     /       / ~~~~ /           // ||
-    /       '------'           //  ||
-   /__________________________//   ||
-   |-------------------------;;    ||
-   ||   ||     |  ||  |==||  ||    ||
-   ||   ||     |==||==|  ||  ||    ||
-   ||   |/    /  / /  /      ||    |/
-   ||        (__/ (__/       ||
-   ||                        || 
-   ||                        ||
-   |/                        |/
-*/
