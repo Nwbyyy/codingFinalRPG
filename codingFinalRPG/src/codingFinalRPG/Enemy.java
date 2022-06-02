@@ -23,7 +23,7 @@ public class Enemy {
 		
 	}
 
-	//Custom energy constructor
+	//Custom enemy constructor
 	public Enemy(String n, String t, double h, int m, Item hand, Item[] d) {
 		
 		name = n;
