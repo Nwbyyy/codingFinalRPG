@@ -7,8 +7,7 @@ TALLY:
 - Methods: 54
 - Longest File: 646 lines
 
-Todo List:
-(idk if i should start on visuals or internals first </3)
+TODO LIST:
 - [x] Make player constructor
 - [x] Make item constructors (?)
 - [x] Make enemy constructor 
