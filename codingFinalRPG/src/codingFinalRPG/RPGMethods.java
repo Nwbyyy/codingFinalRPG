@@ -360,7 +360,7 @@ public class RPGMethods {
 
 	}
 	
-	//Displays the message when you check your inv
+	//Displays the message when you die
 	public static void DisplayYouDied() {
 
 		System.out.println("-------------------------------------------------------------------------------------------------------------------------");
@@ -378,7 +378,7 @@ public class RPGMethods {
 		System.out.println("-------------------------------------------------------------------------------------------------------------------------");
 	}
 	
-	//Displays the message when you check your inv
+	//Displays the message when an enemy is defeated
 	public static void DisplayEnemyDefeated() {
 
 		System.out.println("-------------------------------------------------------------------------------------------------------------------------");
@@ -471,7 +471,7 @@ public class RPGMethods {
 		System.out.println("-------------------------------------------------------------------------------------------------------------------------");
 	}
 
-	//Displays the message when you move on
+	//Displays the message when the enemy misses
 	public static void DisplayEnemyMissed(Character player) {
 
 		System.out.println("-------------------------------------------------------------------------------------------------------------------------");
@@ -489,7 +489,7 @@ public class RPGMethods {
 		System.out.println("-------------------------------------------------------------------------------------------------------------------------");
 	}
 
-	//Displays the message when you move on
+	//Displays the message when you beat the floor
 	public static void DisplayBeatFloor() {
 
 		System.out.println("-------------------------------------------------------------------------------------------------------------------------");
@@ -507,7 +507,7 @@ public class RPGMethods {
 		System.out.println("-------------------------------------------------------------------------------------------------------------------------");
 	}
 
-	//Displays the message when you move on
+	//Displays the message when you check an enemy
 	public static void DisplayCheck(Enemy enemy) {
 
 		RPGMethods.spaces100();

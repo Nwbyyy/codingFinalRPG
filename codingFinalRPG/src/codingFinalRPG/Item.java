@@ -58,7 +58,7 @@ public class Item {
 	static Item healthPotion = new Item("Health Potion", 0.0, 1, true, false, false, 50, 0, 0);
 	static Item manaPotion = new Item("Mana Potion", 0.0, 1, false, true, false, 0, 50, 0);
 
-	//Returns name of item (used to test atm)
+	//Returns name of item
 	public String getName() {
 		return name;
 	}
@@ -75,6 +75,7 @@ public class Item {
 		return manaRestore;
 	}
 
+	//Uses an item (health potion atm)
 	public static void useItem(Character player, int slot) {
 		System.out.println(slot);
 		if(player.getInv().get(slot).getName().equalsIgnoreCase("Health Potion")) {

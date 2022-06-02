@@ -4,6 +4,7 @@ import java.util.*;
 
 public class Combat {
 	
+	//Condensed to do the attacking sequence (when you chose to attack)
 	public static void AttackSeq(Stage stage, int i, Character player) {
 
 		if(((int) (Math.random()*3)) == 0) {

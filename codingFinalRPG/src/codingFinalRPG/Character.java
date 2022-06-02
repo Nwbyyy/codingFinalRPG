@@ -29,6 +29,7 @@ public class Character {
 		
 	}
 	
+	//Get methods
 	public double getHealth() {
 		return health;
 	}
@@ -45,6 +46,7 @@ public class Character {
 		return inventory;
 	}
 	
+	//Useful methods to do things
 	public void setHealth(double hlth) {
 		health = hlth;
 	}

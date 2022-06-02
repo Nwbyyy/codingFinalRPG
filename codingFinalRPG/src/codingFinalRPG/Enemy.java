@@ -131,6 +131,7 @@ public class Enemy {
 		health -= dmg;
 	}
 	
+	//Makes the player take damage due the enemy? (i dont remeber writing this)
 	public void enemyAttack(Character player) {
 		player.takeDamage(this.getHeld().getDamage());
 	}
