@@ -134,4 +134,5 @@ public class Enemy {
 	public void enemyAttack(Character player) {
 		player.takeDamage(this.getHeld().getDamage());
 	}
+	
 }

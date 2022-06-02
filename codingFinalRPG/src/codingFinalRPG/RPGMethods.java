@@ -279,8 +279,6 @@ public class RPGMethods {
 	//Displays the message when youre in the hallway outside
 	public static void DisplayFromHallway() {
 
-		RPGMethods.spaces100();
-
 		System.out.println("-------------------------------------------------------------------------------------------------------------------------");
 		
 		for(int i = 0; i < 3; i++) {
@@ -489,6 +487,160 @@ public class RPGMethods {
 		}
 		
 		System.out.println("-------------------------------------------------------------------------------------------------------------------------");
+	}
+
+	//Displays the message when you move on
+	public static void DisplayBeatFloor() {
+
+		System.out.println("-------------------------------------------------------------------------------------------------------------------------");
+		
+		for(int i = 0; i < 3; i++) {
+			System.out.printf("|%119s| %n", "");
+		}
+		
+		System.out.printf("|%s|%n", StringUtils.center("You have completed this floor! You travel onwards to see what the next one holds...", 119));
+		
+		for(int i = 0; i < 3; i++) {
+			System.out.printf("|%119s| %n", "");
+		}
+		
+		System.out.println("-------------------------------------------------------------------------------------------------------------------------");
+	}
+
+	//Displays the message when you move on
+	public static void DisplayCheck(Enemy enemy) {
+
+		RPGMethods.spaces100();
+
+		System.out.println("-------------------------------------------------------------------------------------------------------------------------");
+		
+		for(int i = 0; i < 1; i++) {
+			System.out.printf("|%119s| %n", "");
+		}
+		
+		System.out.printf("|%s|%n", StringUtils.center(enemy.getName() + " the " + enemy.getType(), 119));
+		System.out.printf("|%s|%n", StringUtils.center("HP: " + enemy.getHealth(), 119));
+		System.out.printf("|%s|%n", StringUtils.center("Holding: " + enemy.getHeld().getName() + " (Damage: " + enemy.getHeld().getDamage() + ")", 119));
+		System.out.printf("|%s|%n", StringUtils.center("Drops: " + enemy.getDrops(0).getName(), 119));
+		
+		for(int i = 0; i < 1; i++) {
+			System.out.printf("|%119s| %n", "");
+		}
+		
+		System.out.println("-------------------------------------------------------------------------------------------------------------------------");
+	}
+
+	//Runs the entire game (I cant belive this fits in a single method)
+	public static void RunGameStage(Stage stage1, Character player) {
+
+		Scanner kboard = new Scanner(System.in);
+
+		int roomsTotal = 5;
+		int slot = 1;
+        String invChoice = "";
+        String enterChoice = "";
+        String actionChoice = "";
+
+		for(int i = 0; i < roomsTotal; i++) {
+
+            RPGMethods.spaces100();
+            
+            while(true) {
+
+                RPGMethods.DisplayFromHallway();
+	            enterChoice = RPGMethods.DisplayOptions();
+
+                if(enterChoice.equalsIgnoreCase("enter room")) {
+        
+                    
+                    RPGMethods.DisplayEnterRoom();
+                    RPGMethods.wait5();
+                    RPGMethods.spaces100();
+                    System.out.println("Room: " + stage1.getRooms().get(i).getRoomNumber());
+                    RPGMethods.DisplayGoblin();
+                    
+                    while(player.getHealth() > 0 && stage1.getRooms().get(i).getEnemies().getHealth() > 0) {
+                    
+                        actionChoice = RPGMethods.DisplayActions();
+                        
+                        if(actionChoice.equalsIgnoreCase("attack")) {
+                            
+                            Combat.AttackSeq(stage1, i, player);
+            
+                        }
+                        
+                        else if(actionChoice.equalsIgnoreCase("Inventory")) {
+                            
+                            RPGMethods.spaces100();
+                            RPGMethods.DisplayInventory(player);
+                            RPGMethods.DisplayInvOptions();
+                            
+                            invChoice = kboard.nextLine();
+                            
+                            if(invChoice.equalsIgnoreCase("exit")) {
+                                
+                                continue;
+                                
+                            }
+
+                            else {
+                                
+                                Integer.parseInt(invChoice);
+                                
+                                Item.useItem(player, slot);
+                                
+                            }
+            
+                        }
+            
+                        else if(actionChoice.equalsIgnoreCase("check")) {
+            
+                            RPGMethods.DisplayCheck(stage1.getRooms().get(i).getEnemies());
+            
+                        }
+
+                    }
+                    
+                    if(player.getHealth() <= 0) {
+                        
+                        RPGMethods.DisplayYouDied();
+                        RPGMethods.wait10();
+                        System.exit(0);
+                        
+                    }
+                    
+                    else if(stage1.getRooms().get(i).getEnemies().getHealth() <= 0) {
+                        
+                        RPGMethods.DisplayEnemyDefeated();
+                        player.getInv().add(stage1.getRooms().get(i).getEnemies().getDrops(0));
+                        RPGMethods.wait5();
+                    }
+
+                    break;
+                    
+                }
+        
+                else if(enterChoice.equalsIgnoreCase("move on")) {
+        
+                    RPGMethods.spaces100();
+                    RPGMethods.DisplayMoveOn();
+                    RPGMethods.wait5();
+                    break;
+        
+                }
+        
+                else {
+        
+                System.out.println("That's not an option...");
+                continue;
+        
+                }
+            }
+        }
+
+		RPGMethods.spaces100();
+		RPGMethods.DisplayBeatFloor();
+		RPGMethods.wait5();
 	}
 
 }
