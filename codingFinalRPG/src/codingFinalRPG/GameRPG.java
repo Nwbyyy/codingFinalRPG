@@ -10,7 +10,6 @@ public class GameRPG {
         //Initializes needed variables
         Scanner kboard = new Scanner(System.in);
         int roomsTotal = 5;
-        String startChoice = "";
         
         //Player weapon
         Item rulerWep = new Item("The Ruler", 16.0, 100, false, false, false, 0, 0, 0);
@@ -32,9 +31,6 @@ public class GameRPG {
 
         //Starts the game
         RPGMethods.DisplayStart();
-        startChoice = kboard.nextLine();
-        RPGMethods.spaces100();
-        RPGMethods.StartChoices(startChoice);
         
         //Creates first stage and runs the game
         Stage stage = new Stage(roomsTotal, Room.GenerateRooms(1, roomsTotal));
