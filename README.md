@@ -1,11 +1,11 @@
 # CodingFinalRPG
-NOTICE: HEAVILY WORK IN PROGRESS
+NOTICE: RUNNING BY WORK IN PROGRESS
 
 TALLY:
 - Files: 8
 - Constructors: 10 
-- Methods: 54
-- Longest File: 646 lines
+- Methods: 66
+- Longest File: 1110 lines
 
 TODO LIST:
 - [x] Make player constructor
@@ -17,6 +17,6 @@ TODO LIST:
 - [x] Make turn options
 - [x] Make start menu
 - [x] Make starting story
-- [ ] Make credits option
+- [x] Make credits option
 - [x] Figure out how the floors will be made
 - [x] Add comments to everything (oops)
