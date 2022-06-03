@@ -3,7 +3,6 @@ package codingFinalRPG;
 import java.util.*;
 import java.util.Scanner;
 
-
 public class GameRPG {
 
     public static void main(String[] args) {
@@ -13,10 +12,11 @@ public class GameRPG {
         int roomsTotal = 5;
         String startChoice = "";
         
-        //Player weapon (buffed to test atm)
-        Item rulerWep = new Item("The Ruler", 160.0, 100, false, false, false, 0, 0, 0);
+        //Player weapon
+        Item rulerWep = new Item("The Ruler", 16.0, 100, false, false, false, 0, 0, 0);
         
         //Boss weapon and drops
+        Item gradeBookWep = new Item("Grade Book", 15.0, 100, false, false, false, 0, 0, 0);
         Item burrito = new Item("Breakfast Burrito", 0, 1, true, false, false, 100, 0, 0);
         Item[] bossDrops = {burrito};
         
@@ -25,10 +25,10 @@ public class GameRPG {
         inv.add(rulerWep);
         	
         //Creates player :)
-        Character player = new Character(1000000.0, 100, 5, inv);
+        Character player = new Character(100.0, 100, 5, inv);
         
         //Creates final boss :0
-        Enemy finalBoss = new Enemy("Mr. K", "Teacher", 1000.0, 100, rulerWep, bossDrops);
+        Enemy finalBoss = new Enemy("Mr. K", "Teacher", 1000.0, 100, gradeBookWep, bossDrops);
 
         //Starts the game
         RPGMethods.DisplayStart();
@@ -44,65 +44,15 @@ public class GameRPG {
         stage = new Stage(roomsTotal, Room.GenerateRooms(2, roomsTotal));
         RPGMethods.RunGameStage(stage, player);
 
-        //final boss here?
-        RPGMethods.DisplayBossDialog();
-        RPGMethods.DisplayFinalBoss();
-        
-        
-        //Scanner kboard = new Scanner(System.in);
-
-        int slot = 1;
-        String invChoice = "";
-        String actionChoice = "";
-        boolean weakened = false;
-        
-        while(player.getHealth() > 0 && finalBoss.getHealth() > 0) {
-            
-            actionChoice = RPGMethods.DisplayActions();
-            
-            if(actionChoice.equalsIgnoreCase("attack")) {
-                
-               weakened = Combat.BossAttackSeq(player, finalBoss);
-               
-            }
-            
-            else if(actionChoice.equalsIgnoreCase("Inventory")) {
-                
-                RPGMethods.spaces100();
-                RPGMethods.DisplayInventory(player);
-                RPGMethods.DisplayInvOptions();
-                
-                invChoice = kboard.nextLine();
-                
-                if(invChoice.equalsIgnoreCase("exit")) {
-                    
-                	RPGMethods.spaces100();
-                    continue;
-                    
-                }
-
-                else {
-                    
-                    slot = Integer.parseInt(invChoice);
-                    
-                    Item.useItem(player, slot);
-                    
-                }
-
-            }
-
-            else if(actionChoice.equalsIgnoreCase("check")) {
-
-                RPGMethods.DisplayCheck(finalBoss);
-
-            }
-
-        }
+        //Final boss sequence
+        RPGMethods.RunGameBoss(player, finalBoss);
 
         kboard.close();
 
     }
 
 }
+
+
 
 

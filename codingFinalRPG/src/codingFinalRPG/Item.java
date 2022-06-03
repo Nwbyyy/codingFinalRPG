@@ -1,7 +1,5 @@
 package codingFinalRPG;
 
-import java.util.*;
-
 public class Item {
 
 	//Vars :)
@@ -75,9 +73,14 @@ public class Item {
 		return manaRestore;
 	}
 
+	//Sets the damage for boss item
+	public void setDamage(int newDmg) {
+		damage = newDmg;
+	}
+
 	//Uses an item (health potion atm)
 	public static void useItem(Character player, int slot) {
-		System.out.println(slot);
+		slot -= 1;
 		if(player.getInv().get(slot).getName().equalsIgnoreCase("Health Potion")) {
 
 			if(player.getHealth() == 100) {
@@ -134,6 +137,15 @@ public class Item {
 				player.getInv().remove(slot);
 
 			}
+		}
+
+		else if(player.getInv().get(slot).getName().equalsIgnoreCase("Breakfast Burrito")) {
+
+			player.getInv().get(0).setDamage(1000);
+			player.getInv().remove(slot);
+			RPGMethods.spaces100();
+			RPGMethods.DisplayEatBurrito();
+
 		}
 
 		else {

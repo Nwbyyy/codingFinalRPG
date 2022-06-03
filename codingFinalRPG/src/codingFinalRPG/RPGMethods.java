@@ -133,6 +133,35 @@ public class RPGMethods {
 
 		
 	}
+
+	//Displays combat choices
+	public static String DisplayBossActions() {
+		
+		Scanner kboard = new Scanner(System.in);
+
+		System.out.println("-------------------------------------------------------------------------------------------------------------------------");
+		
+		for(int i = 0; i < 3; i++) {
+			System.out.printf("|%119s| %n", "|                             |                             |                             ");
+		}
+		
+		System.out.printf("|%s|%s|%s|%s|%n",
+                StringUtils.center("Attack", 29),
+                StringUtils.center("Inventory", 29),
+				StringUtils.center("Check", 29),
+                StringUtils.center("Grab Burrito", 29));
+
+		for(int i = 0; i < 3; i++) {
+			System.out.printf("|%119s| %n", "|                             |                             |                             ");
+		}
+		
+		System.out.println("-------------------------------------------------------------------------------------------------------------------------");
+		String actionChoice = kboard.nextLine();
+
+		return actionChoice;
+
+		
+	}
 	
 	//Displays the full guide sequence
 	public static void DisplayGuide() {
@@ -317,8 +346,8 @@ public class RPGMethods {
 			System.out.printf("|%119s| %n", "");
 		}
 		
-		System.out.printf("|%s|%n", StringUtils.center("You strike the enemy with " + player.getInv().get(0).getName() + ", dealing " + player.getInv().get(0).getDamage() + " to the goblin.", 119));
-		System.out.printf("|%s|%n", StringUtils.center("The goblin has " + goblin.getHealth() + " HP remaining.", 119));
+		System.out.printf("|%s|%n", StringUtils.center("You strike the " + goblin.getType() + " with " + player.getInv().get(0).getName() + ", dealing " + player.getInv().get(0).getDamage() + " to the " + goblin.getType() + ".", 119));
+		System.out.printf("|%s|%n", StringUtils.center("The " + goblin.getType() + " has " + goblin.getHealth() + " HP remaining.", 119));
 
 		for(int i = 0; i < 3; i++) {
 			System.out.printf("|%119s| %n", "");
@@ -336,7 +365,7 @@ public class RPGMethods {
 			System.out.printf("|%119s| %n", "");
 		}
 		
-		System.out.printf("|%s|%n", StringUtils.center("The goblin strikes you with " + goblin.getHeld().getName() + ", dealing " + goblin.getHeld().getDamage(), 119));
+		System.out.printf("|%s|%n", StringUtils.center("The " + goblin.getType() + " strikes you with " + goblin.getHeld().getName() + ", dealing " + goblin.getHeld().getDamage(), 119));
 		System.out.printf("|%s|%n", StringUtils.center("You have " + player.getHealth() + " HP remaining.", 119));
 		
 		for(int i = 0; i < 3; i++) {
@@ -540,6 +569,103 @@ public class RPGMethods {
 		}
 		
 		System.out.println("-------------------------------------------------------------------------------------------------------------------------");
+	}
+
+	//Displays the message when you eat the burrito
+	public static void DisplayEatBurrito() {
+
+		System.out.println("-------------------------------------------------------------------------------------------------------------------------");
+		
+		for(int i = 0; i < 3; i++) {
+			System.out.printf("|%119s| %n", "");
+		}
+		
+		System.out.printf("|%s|%n", StringUtils.center("You eat the breakfast burrito... You feel the power surging through your body...", 119));
+		
+		for(int i = 0; i < 3; i++) {
+			System.out.printf("|%119s| %n", "");
+		}
+		
+		System.out.println("-------------------------------------------------------------------------------------------------------------------------");
+	}
+
+	//Displays the message when you grab the burrito
+	public static void DisplayGrabBurrito() {
+
+		RPGMethods.spaces100();
+
+		System.out.println("-------------------------------------------------------------------------------------------------------------------------");
+		
+		for(int i = 0; i < 3; i++) {
+			System.out.printf("|%119s| %n", "");
+		}
+		
+		System.out.printf("|%s|%n", StringUtils.center("You are able to sneak by while Mr. K is disoriented... You got very lucky.", 119));
+		System.out.printf("|%s|%n", StringUtils.center("You snatch the breakfast burrito from his desk, still warm from the cafeteria.", 119));
+		
+		for(int i = 0; i < 3; i++) {
+			System.out.printf("|%119s| %n", "");
+		}
+		
+		System.out.println("-------------------------------------------------------------------------------------------------------------------------");
+	}
+
+	//Displays the message when you grab the burrito
+	public static void DisplayBossDefeated() {
+
+		RPGMethods.spaces100();
+
+		System.out.println("-------------------------------------------------------------------------------------------------------------------------");
+		
+		for(int i = 0; i < 3; i++) {
+			System.out.printf("|%119s| %n", "");
+		}
+		
+		System.out.printf("|%s|%n", StringUtils.center("Mr. K stumbles back into his chair, seeming surprised where this new found strength came from.", 119));
+		System.out.printf("|%s|%n", StringUtils.center("The grade book he was wielding drops to his side, the pages fluttering closed.", 119));
+		System.out.printf("|%s|%n", StringUtils.center("You had defeated Mr. K at his strongest, the monsters around you seemed to have gotten the hint as well.", 119));
+		System.out.printf("|%s|%n", StringUtils.center("Within minutes, the halls and class rooms were left empty. The only sign of the events being the mess left behind.", 119));
+		
+		for(int i = 0; i < 3; i++) {
+			System.out.printf("|%119s| %n", "");
+		}
+		
+		System.out.println("-------------------------------------------------------------------------------------------------------------------------");
+		RPGMethods.wait10();
+
+		System.out.println("-------------------------------------------------------------------------------------------------------------------------");
+		
+		for(int i = 0; i < 3; i++) {
+			System.out.printf("|%119s| %n", "");
+		}
+		
+		System.out.printf("|%s|%n", StringUtils.center("You head down the stairs one last time as you see emergency services rushing the halls around you to make sure it's safe.", 119));
+		System.out.printf("|%s|%n", StringUtils.center("Once you get down to the lunch lines, you see your friends and peers gathered all around enjoying a breakfast burrito from the collected pile.", 119));
+		System.out.printf("|%s|%n", StringUtils.center("You had saved the school from the monsters that had taken over and foiled Mr. K's devious plan...", 119));
+		System.out.printf("|%s|%n", StringUtils.center("You were the hero.", 119));
+		
+		for(int i = 0; i < 3; i++) {
+			System.out.printf("|%119s| %n", "");
+		}
+		
+		System.out.println("-------------------------------------------------------------------------------------------------------------------------");
+		RPGMethods.wait10();
+
+		System.out.println("-------------------------------------------------------------------------------------------------------------------------");
+		
+		for(int i = 0; i < 3; i++) {
+			System.out.printf("|%119s| %n", "");
+		}
+		
+		System.out.printf("|%s|%n", StringUtils.center("Thank you for playing!!!", 119));
+		
+		for(int i = 0; i < 3; i++) {
+			System.out.printf("|%119s| %n", "");
+		}
+		
+		System.out.println("-------------------------------------------------------------------------------------------------------------------------");
+		RPGMethods.wait5();
+
 	}
 
 	//Displays the boss graphic
@@ -798,6 +924,146 @@ public class RPGMethods {
 		RPGMethods.spaces100();
 		RPGMethods.DisplayBeatFloor();
 		RPGMethods.wait5();
+	}
+
+	//Runs the entire boss fight (I cant belive this fits in a single method)
+	public static void RunGameBoss(Character player, Enemy finalBoss) {
+
+		Scanner kboard = new Scanner(System.in);
+
+		Item burrito = new Item("Breakfast Burrito", 0, 1, true, false, false, 100, 0, 0);
+
+        int slot = 1;
+        String invChoice = "";
+        String actionChoice = "";
+        boolean weakened = false;
+		
+		RPGMethods.DisplayBossDialog();
+        RPGMethods.DisplayFinalBoss();
+        RPGMethods.wait5();
+        
+        while(player.getHealth() > 0 && finalBoss.getHealth() > 0) {
+            
+            if(!player.getInv().contains(burrito)) {
+
+                actionChoice = RPGMethods.DisplayBossActions();
+            
+                if(actionChoice.equalsIgnoreCase("attack")) {
+                    
+                   weakened = Combat.BossAttackSeq(player, finalBoss);
+                   
+                }
+                
+                else if(actionChoice.equalsIgnoreCase("Inventory")) {
+                    
+                    RPGMethods.spaces100();
+                    RPGMethods.DisplayInventory(player);
+                    RPGMethods.DisplayInvOptions();
+                    
+                    invChoice = kboard.nextLine();
+                    
+                    if(invChoice.equalsIgnoreCase("exit")) {
+                        
+                        RPGMethods.spaces100();
+                        continue;
+                        
+                    }
+    
+                    else {
+                        
+                        slot = Integer.parseInt(invChoice);
+                        
+                        Item.useItem(player, slot);
+                        
+                    }
+    
+                }
+    
+                else if(actionChoice.equalsIgnoreCase("check")) {
+    
+                    RPGMethods.DisplayCheck(finalBoss);
+    
+                }
+    
+                else if(actionChoice.equalsIgnoreCase("grab burrito")) {
+    
+                    if(weakened == true) {
+
+                        player.getInv().add(burrito);
+                        RPGMethods.DisplayGrabBurrito();
+                    }
+    
+                    else {
+    
+                        finalBoss.enemyAttack(player);
+                        RPGMethods.DisplayEnemyAttack(player, finalBoss);
+    
+                    }
+                    
+                    weakened = false;
+
+                }
+
+            }
+
+            else {
+
+                actionChoice = RPGMethods.DisplayActions();
+                
+                if(actionChoice.equalsIgnoreCase("attack")) {
+                    
+                weakened = Combat.BossAttackSeq(player, finalBoss);
+                
+                }
+                
+                else if(actionChoice.equalsIgnoreCase("Inventory")) {
+                    
+                    RPGMethods.spaces100();
+                    RPGMethods.DisplayInventory(player);
+                    RPGMethods.DisplayInvOptions();
+                    
+                    invChoice = kboard.nextLine();
+                    
+                    if(invChoice.equalsIgnoreCase("exit")) {
+                        
+                        RPGMethods.spaces100();
+                        continue;
+                        
+                    }
+
+                    else {
+                        
+                        slot = Integer.parseInt(invChoice);
+                        Item.useItem(player, slot);
+                        
+                    }
+
+                }
+
+                else if(actionChoice.equalsIgnoreCase("check")) {
+
+					RPGMethods.wait5();
+                    RPGMethods.DisplayCheck(finalBoss);
+
+                }
+
+            }
+
+        }
+
+        if(player.getHealth() <= 0) {
+                        
+            RPGMethods.DisplayYouDied();
+            RPGMethods.wait10();
+            System.exit(0);
+            
+        }
+        
+        else if(finalBoss.getHealth() <= 0) {
+            
+            RPGMethods.DisplayBossDefeated();
+
+        }
 	}
 
 }

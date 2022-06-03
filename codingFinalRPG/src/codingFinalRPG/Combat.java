@@ -1,7 +1,5 @@
 package codingFinalRPG;
 
-import java.util.*;
-
 public class Combat {
 	
 	//Condensed to do the attacking sequence (when you chose to attack)
@@ -44,7 +42,7 @@ public class Combat {
 					RPGMethods.DisplayYourAttack(player, boss);
 									
 					RPGMethods.DisplayEnemyMissed(player);
-					
+
 					RPGMethods.DisplayBossWeak();
 					
 					return true;

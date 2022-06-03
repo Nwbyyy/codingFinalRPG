@@ -1,7 +1,5 @@
 package codingFinalRPG;
 
-import java.util.*;
-
 public class Enemy {
 
 	private String name;
@@ -67,7 +65,7 @@ public class Enemy {
 		
 		//Creates drops (potions) for the enemy ('Item' objects)
 		Item healthPotion = new Item("Health Potion", 0.0, 1, true, false, false, 50, 0, 0);
-		Item manaPotion = new Item("Mana Potion", 0.0, 1, false, true, false, 0, 50, 0);
+		// Item manaPotion = new Item("Mana Potion", 0.0, 1, false, true, false, 0, 50, 0);
 		
 		//Randomly choses one of the two to drop
 		// Item[] dropPos = {healthPotion, manaPotion};
