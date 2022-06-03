@@ -51,59 +51,78 @@ public class RPGMethods {
 	//Displays the title card
 	public static void DisplayStart() {
 
-		System.out.println("-------------------------------------------------------------------------------------------------------------------------");
-		
-		for(int i = 0; i < 1; i++) {
+		Scanner kboard = new Scanner(System.in);
+
+		while(true) {
+
+			RPGMethods.spaces100();
+
+			System.out.println("-------------------------------------------------------------------------------------------------------------------------");
+			
+			for(int i = 0; i < 1; i++) {
+				System.out.printf("|%119s| %n", "");
+			}
+
+			System.out.printf("|%119s| %n", " ______     __  __     ______     ______     ______      ______   ______        ______   __  __     ______       ");
+			System.out.printf("|%119s| %n", "/\\  __ \\   /\\ \\/\\ \\   /\\  ___\\   /\\  ___\\   /\\__  _\\    /\\__  _\\ /\\  __ \\      /\\__  _\\ /\\ \\_\\ \\   /\\  ___\\      ");
+			System.out.printf("|%119s| %n", "\\ \\ \\/\\_\\  \\ \\ \\_\\ \\  \\ \\  __\\   \\ \\___  \\  \\/_/\\ \\/    \\/_/\\ \\/ \\ \\ \\/\\ \\     \\/_/\\ \\/ \\ \\  __ \\  \\ \\   __\\     ");
+			System.out.printf("|%119s| %n", "\\ \\___\\_\\  \\ \\_____\\  \\ \\_____\\  \\/\\_____\\    \\ \\_\\       \\ \\_\\  \\ \\_____\\       \\ \\_\\  \\ \\_\\ \\_\\  \\ \\_____\\    ");
+			System.out.printf("|%119s| %n", "\\/___/_/   \\/_____/   \\/_____/   \\/_____/     \\/_/        \\/_/   \\/_____/        \\/_/   \\/_/\\/_/   \\/_____/    ");
 			System.out.printf("|%119s| %n", "");
-		}
-
-		System.out.printf("|%119s| %n", " ______     __  __     ______     ______     ______      ______   ______        ______   __  __     ______       ");
-		System.out.printf("|%119s| %n", "/\\  __ \\   /\\ \\/\\ \\   /\\  ___\\   /\\  ___\\   /\\__  _\\    /\\__  _\\ /\\  __ \\      /\\__  _\\ /\\ \\_\\ \\   /\\  ___\\      ");
-		System.out.printf("|%119s| %n", "\\ \\ \\/\\_\\  \\ \\ \\_\\ \\  \\ \\  __\\   \\ \\___  \\  \\/_/\\ \\/    \\/_/\\ \\/ \\ \\ \\/\\ \\     \\/_/\\ \\/ \\ \\  __ \\  \\ \\   __\\     ");
-		System.out.printf("|%119s| %n", "\\ \\___\\_\\  \\ \\_____\\  \\ \\_____\\  \\/\\_____\\    \\ \\_\\       \\ \\_\\  \\ \\_____\\       \\ \\_\\  \\ \\_\\ \\_\\  \\ \\_____\\    ");
-		System.out.printf("|%119s| %n", "\\/___/_/   \\/_____/   \\/_____/   \\/_____/     \\/_/        \\/_/   \\/_____/        \\/_/   \\/_/\\/_/   \\/_____/    ");
-		System.out.printf("|%119s| %n", "");
-		System.out.printf("|%119s| %n", "__         __  __     __   __     ______     __  __        __         __     __   __     ______     ______      ");
-		System.out.printf("|%119s| %n", "/\\ \\       /\\ \\/\\ \\   /\\ \"-.\\ \\   /\\  ___\\   /\\ \\_\\ \\      /\\ \\       /\\ \\   /\\ \"-.\\ \\   /\\  ___\\   /\\  ___\\     ");
-		System.out.printf("|%119s| %n", "\\ \\ \\____  \\ \\ \\_\\ \\  \\ \\ \\-.  \\  \\ \\ \\____  \\ \\  __ \\     \\ \\ \\____  \\ \\ \\  \\ \\ \\-.  \\  \\ \\  __\\   \\ \\___  \\    ");
-		System.out.printf("|%119s| %n", "\\ \\_____\\  \\ \\_____\\  \\ \\_\\\\\"\\_\\  \\ \\_____\\  \\ \\_\\ \\_\\     \\ \\_____\\  \\ \\_\\  \\ \\_\\\\\"\\_\\  \\ \\_____\\  \\/\\_____\\   ");
-		System.out.printf("|%119s| %n", "\\/_____/   \\/_____/   \\/_/ \\/_/   \\/_____/   \\/_/\\/_/      \\/_____/   \\/_/   \\/_/ \\/_/   \\/_____/   \\/_____/   ");
-		
-		System.out.printf("|%119s| %n", "");
-
-		System.out.printf("|%119s| %n", ".__         .  .      .                                                  ");
-		System.out.printf("|%119s| %n", "[__)  . *   |\\ |.    ,|_   .                                             ");
-		System.out.printf("|%119s| %n", "[__)\\_| *   | \\| \\/\\/ [_)\\_|                                             ");
-		System.out.printf("|%119s| %n", "._|                  ._|                                             ");
-
-		System.out.printf("|%119s| %n", "");
-
-		System.out.printf("|%119s| %n", "Start                                                         ");
-		System.out.printf("|%119s| %n", "");
-		System.out.printf("|%119s| %n", "Credits                                                        ");
-
-		for(int i = 0; i < 1; i++) {
+			System.out.printf("|%119s| %n", "__         __  __     __   __     ______     __  __        __         __     __   __     ______     ______      ");
+			System.out.printf("|%119s| %n", "/\\ \\       /\\ \\/\\ \\   /\\ \"-.\\ \\   /\\  ___\\   /\\ \\_\\ \\      /\\ \\       /\\ \\   /\\ \"-.\\ \\   /\\  ___\\   /\\  ___\\     ");
+			System.out.printf("|%119s| %n", "\\ \\ \\____  \\ \\ \\_\\ \\  \\ \\ \\-.  \\  \\ \\ \\____  \\ \\  __ \\     \\ \\ \\____  \\ \\ \\  \\ \\ \\-.  \\  \\ \\  __\\   \\ \\___  \\    ");
+			System.out.printf("|%119s| %n", "\\ \\_____\\  \\ \\_____\\  \\ \\_\\\\\"\\_\\  \\ \\_____\\  \\ \\_\\ \\_\\     \\ \\_____\\  \\ \\_\\  \\ \\_\\\\\"\\_\\  \\ \\_____\\  \\/\\_____\\   ");
+			System.out.printf("|%119s| %n", "\\/_____/   \\/_____/   \\/_/ \\/_/   \\/_____/   \\/_/\\/_/      \\/_____/   \\/_/   \\/_/ \\/_/   \\/_____/   \\/_____/   ");
+			
 			System.out.printf("|%119s| %n", "");
+
+			System.out.printf("|%119s| %n", ".__         .  .      .                                                  ");
+			System.out.printf("|%119s| %n", "[__)  . *   |\\ |.    ,|_   .                                             ");
+			System.out.printf("|%119s| %n", "[__)\\_| *   | \\| \\/\\/ [_)\\_|                                             ");
+			System.out.printf("|%119s| %n", "._|                  ._|                                             ");
+
+			System.out.printf("|%119s| %n", "");
+
+			System.out.printf("|%119s| %n", "Start                                                         ");
+			System.out.printf("|%119s| %n", "");
+			System.out.printf("|%119s| %n", "Credits                                                        ");
+
+			for(int i = 0; i < 1; i++) {
+				System.out.printf("|%119s| %n", "");
+			}
+			
+			System.out.println("-------------------------------------------------------------------------------------------------------------------------");
+
+			String startChoice = kboard.nextLine();
+			RPGMethods.spaces100();
+
+			if(startChoice.equalsIgnoreCase("Start")) {
+
+				RPGMethods.DisplayGuide();
+				break;
+
+			}
+
+			else if(startChoice.equalsIgnoreCase("Credits")) {
+
+				RPGMethods.DisplayCredits();
+				continue;
+
+			}
+
+			else {
+
+				System.out.println("Not a valid choice :/");
+				RPGMethods.wait5();
+				continue;
+
+			}
+
 		}
-		
-		System.out.println("-------------------------------------------------------------------------------------------------------------------------");
 
-	}
+		RPGMethods.spaces100();
 
-	//Continues the games depending on choice
-	public static void StartChoices(String choice) {
-
-		if(choice.equalsIgnoreCase("Start")) {
-			RPGMethods.DisplayGuide();
-		}
-
-		else if(choice.equalsIgnoreCase("Credits")) {
-			//RPGMethods.DisplayCredits();
-		}
-
-		else {
-			System.out.println("Not a valid choice :/");
-		}
 	}
 
 	//Displays combat choices
@@ -333,6 +352,28 @@ public class RPGMethods {
 		}
 		
 		System.out.println("-------------------------------------------------------------------------------------------------------------------------");
+	}
+
+	//Displays the credits
+	public static void DisplayCredits() {
+
+		System.out.println("-------------------------------------------------------------------------------------------------------------------------");
+		
+		for(int i = 0; i < 3; i++) {
+			System.out.printf("|%119s| %n", "");
+		}
+		
+		System.out.printf("|%s|%n", StringUtils.center("A text-based terminal game by Nwby", 119));
+		System.out.printf("|%s|%n", StringUtils.center("Completed on June 2nd, 2022", 119));
+		System.out.printf("|%s|%n", StringUtils.center("Made for my coding final", 119));
+		System.out.printf("|%s|%n", StringUtils.center("Grade: TBD", 119));
+
+		for(int i = 0; i < 3; i++) {
+			System.out.printf("|%119s| %n", "");
+		}
+		
+		System.out.println("-------------------------------------------------------------------------------------------------------------------------");
+		RPGMethods.wait10();
 	}
 	
 	//Displays the message when you attack
@@ -795,22 +836,22 @@ public class RPGMethods {
 	}
 		
 	//Displays the message when you beat the floor
-		public static void DisplayBossWeak() {
+	public static void DisplayBossWeak() {
 
-			System.out.println("-------------------------------------------------------------------------------------------------------------------------");
-			
-			for(int i = 0; i < 3; i++) {
-				System.out.printf("|%119s| %n", "");
-			}
-			
-			System.out.printf("|%s|%n", StringUtils.center("Mr. K missed his stike and became disoriented! This could be your chance!", 119));
-			
-			for(int i = 0; i < 3; i++) {
-				System.out.printf("|%119s| %n", "");
-			}
-			
-			System.out.println("-------------------------------------------------------------------------------------------------------------------------");
+		System.out.println("-------------------------------------------------------------------------------------------------------------------------");
+		
+		for(int i = 0; i < 3; i++) {
+			System.out.printf("|%119s| %n", "");
 		}
+		
+		System.out.printf("|%s|%n", StringUtils.center("Mr. K missed his stike and became disoriented! This could be your chance!", 119));
+		
+		for(int i = 0; i < 3; i++) {
+			System.out.printf("|%119s| %n", "");
+		}
+		
+		System.out.println("-------------------------------------------------------------------------------------------------------------------------");
+	}
 	
 	//Runs the entire game (I cant belive this fits in a single method)
 	public static void RunGameStage(Stage stage1, Character player) {
