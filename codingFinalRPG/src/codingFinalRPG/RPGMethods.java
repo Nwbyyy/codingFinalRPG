@@ -913,8 +913,7 @@ public class RPGMethods {
 
                             else {
                                 
-                                Integer.parseInt(invChoice);
-                                
+                                slot = Integer.parseInt(invChoice);
                                 Item.useItem(player, slot);
                                 
                             }
