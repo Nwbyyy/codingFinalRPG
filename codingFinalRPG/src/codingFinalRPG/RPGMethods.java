@@ -676,16 +676,18 @@ public class RPGMethods {
 
 		System.out.println("-------------------------------------------------------------------------------------------------------------------------");
 		
-		for(int i = 0; i < 3; i++) {
+		for(int i = 0; i < 1; i++) {
 			System.out.printf("|%119s| %n", "");
 		}
 		
-		System.out.printf("|%s|%n", StringUtils.center("You head down the stairs one last time as you see emergency services rushing the halls around you to make sure it's safe.", 119));
-		System.out.printf("|%s|%n", StringUtils.center("Once you get down to the lunch lines, you see your friends and peers gathered all around enjoying a breakfast burrito from the collected pile.", 119));
+		System.out.printf("|%s|%n", StringUtils.center("You head down the stairs one last time as you see emergency services", 119));
+		System.out.printf("|%s|%n", StringUtils.center("rushing the halls around you to make sure it's safe.", 119));
+		System.out.printf("|%s|%n", StringUtils.center("Once you get down to the lunch lines, you see your friends and peers", 119));
+		System.out.printf("|%s|%n", StringUtils.center("gathered all around enjoying a breakfast burrito from the collected pile.", 119));
 		System.out.printf("|%s|%n", StringUtils.center("You had saved the school from the monsters that had taken over and foiled Mr. K's devious plan...", 119));
 		System.out.printf("|%s|%n", StringUtils.center("You were the hero.", 119));
 		
-		for(int i = 0; i < 3; i++) {
+		for(int i = 0; i < 1; i++) {
 			System.out.printf("|%119s| %n", "");
 		}
 		
@@ -761,6 +763,8 @@ public class RPGMethods {
 	//Displays the boss diaglog
 	public static void DisplayBossDialog() {
 		
+		RPGMethods.spaces100();
+
 		System.out.println("-------------------------------------------------------------------------------------------------------------------------");
 				
 		System.out.printf("|%119s| %n", "");

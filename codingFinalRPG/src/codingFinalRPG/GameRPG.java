@@ -33,12 +33,12 @@ public class GameRPG {
         RPGMethods.DisplayStart();
         
         //Creates first stage and runs the game
-        Stage stage = new Stage(roomsTotal, Room.GenerateRooms(1, roomsTotal));
-        RPGMethods.RunGameStage(stage, player);
+        Stage stage1 = new Stage(roomsTotal, Room.GenerateRooms(1, roomsTotal));
+        RPGMethods.RunGameStage(stage1, player);
 
         //Creates second stage and runs the game with new stage
-        stage = new Stage(roomsTotal, Room.GenerateRooms(2, roomsTotal));
-        RPGMethods.RunGameStage(stage, player);
+        Stage stage2 = new Stage(roomsTotal, Room.GenerateRooms(2, roomsTotal));
+        RPGMethods.RunGameStage(stage2, player);
 
         //Final boss sequence
         RPGMethods.RunGameBoss(player, finalBoss);
